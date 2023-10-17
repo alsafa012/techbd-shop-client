@@ -18,37 +18,6 @@ const Navbar = () => {
                          Home
                     </NavLink>
                </li>
-
-               <li>
-                    <NavLink
-                         to="/addCoffee"
-                         className={({ isActive, isPending }) =>
-                              isPending
-                                   ? "pending"
-                                   : isActive
-                                   ? "text-[#ff6900] underline"
-                                   : ""
-                         }
-                    >
-                         addCoffee
-                    </NavLink>
-               </li>
-
-               {/* <li>
-               <NavLink
-                    to="/updateCoffee"
-                    className={({ isActive, isPending }) =>
-                         isPending
-                              ? "pending"
-                              : isActive
-                              ? "text-[#ff6900] underline"
-                              : ""
-                    }
-               >
-                    updateCoffee
-               </NavLink>
-          </li> */}
-
                <li>
                     <NavLink
                          to="/register"
@@ -75,20 +44,6 @@ const Navbar = () => {
                          }
                     >
                          Login
-                    </NavLink>
-               </li>
-               <li>
-                    <NavLink
-                         to="/users"
-                         className={({ isActive, isPending }) =>
-                              isPending
-                                   ? "pending"
-                                   : isActive
-                                   ? "text-[#ff6900] underline"
-                                   : ""
-                         }
-                    >
-                         Users
                     </NavLink>
                </li>
           </>
