@@ -1,27 +1,23 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 // import { useNavigate } from 'react-router-dom';
 import { FiEye, FiEyeOff } from "react-icons/fi";
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../../Provider/AuthProvider';
 
 const Register = () => {
      const [showPassword, setShowPassword] = useState(false);
-
-     // const { user,createUser , updateUserProfile } = useContext(AuthContext);
-
-  /*    const [errorMessage, setErrorMessage] = useState("");
-
-     const navigate = useNavigate();
-     const handleRegister = (e) => {
+     const [errorMessage,setErrorMessage]=useState(false);
+     const {createUser}=useContext(AuthContext)
+     
+     const handleRegister =(e)=>{
           e.preventDefault();
-          const form = new FormData(e.currentTarget);
-          const name = form.get("name");
-          const photo = form.get("photo");
-          const email = form.get("email");
-          const password = form.get("password");
-
-          console.log("register", name, photo, email, password);
-
-          // checking the password
+          const form = e.target
+          const name = form.name.value
+          const photo = form.photo.value
+          const email = form.email.value
+          const password = form.password.value
+          console.log(name, photo, email, password)
+          // validation
           if (password.length < 6) {
                setErrorMessage("Please enter at least 6 character password");
                return;
@@ -34,33 +30,15 @@ const Register = () => {
                setErrorMessage("Password must contain at least one special character.")
                return;
           }
-
-          // create a new user
-          if (user) {
-               // toast.error("user already logged in");
-               return;
-          }
+          // create a ner user
           createUser(email, password)
-               
-               .then((result) => {
-                    // console.log(result.user);
-
-                    // update profile
-
-                    updateUserProfile(name,photo)
-                    .then(() => {
-                    // toast.success('Profile updated')
-                    })
-
-                    toast.success("user successfully sign-up");
-
-                    navigate(location?.state ? location.state : "/");
-               })
-               .catch((error) => {
-                    // console.error(error);
-                    toast.error("something went wrong.please try again.");
-               });
-     }; */
+          .then(result=>{
+               console.log(result.user)
+          })
+          .catch(error=>{
+               console.log(error.message)
+          })
+     }
      return (
           <div>
           <p className=" text-3xl font-bold mb-6 text-center text-[#fcb900]">
@@ -68,7 +46,7 @@ const Register = () => {
           </p>
 
           <form
-               // onSubmit={handleRegister}
+               onSubmit={handleRegister}
                className="w-4/5 md:w-1/2 mx-auto"
           >
                <div className="form-control">
@@ -121,7 +99,7 @@ const Register = () => {
 
                     <span
                          className="text-xl absolute top-[60%] right-4"
-                         // onClick={() => setShowPassword(!showPassword)}
+                         onClick={() => setShowPassword(!showPassword)}
                     >
                          {showPassword ? (
                               <FiEye> </FiEye>
@@ -144,13 +122,13 @@ const Register = () => {
                          </p>
                     </div>
                </div>
-               {/* <h3>
+               <h3>
                     {errorMessage && (
                          <p className="text-red-600 pt-1">
                               {errorMessage}
                          </p>
                     )}
-               </h3> */}
+               </h3>
                <div className="form-control mt-6">
                     <button className="btn text-white bg-[#ff6900]">
                          Sign Up
