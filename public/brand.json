@@ -1,0 +1,26 @@
+[
+     {
+          "brand": "Samsung",
+          "brand_img": "https://i.ibb.co/G5cyKh2/samsung-logo-4-BA7-D9-F6-D7-seeklogo-com.png"
+     },
+     {
+          "brand": "Apple",
+          "brand_img": "https://i.ibb.co/B28zc3w/pngimg-com-apple-logo-PNG19689.png"
+     },
+     {
+          "brand": "Sony",
+          "brand_img": "https://i.ibb.co/zmDNTm1/sony-phone.jpg"
+     },
+     {
+          "brand": "Xiaomi",
+          "brand_img": "https://i.ibb.co/FqbcyGV/Xiaomi-Logo.png"
+     },
+     {
+          "brand": "lg",
+          "brand_img": "https://i.ibb.co/k8W5JYR/lggg.png"
+     },
+     {
+          "brand": "Google",
+          "brand_img": "https://i.ibb.co/x1hwG0w/googlee.png"
+     }
+]

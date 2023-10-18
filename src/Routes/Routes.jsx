@@ -15,7 +15,8 @@ const myCreatedRouter = createBrowserRouter([
           children:[
                {
                     path: "/",
-                    element:<HomePage></HomePage>
+                    element:<HomePage></HomePage>,
+                    loader:()=>fetch('/brand.json')
                },
                {
                     path: "/register",
