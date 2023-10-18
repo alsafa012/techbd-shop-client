@@ -6,12 +6,15 @@ import Swal from "sweetalert2";
 
 const Login = () => {
      const [showPassword, setShowPassword] = useState(false);
-     const { user, googleSignIn } = useContext(AuthContext);
+     const { user, googleSignIn, userSignIn } = useContext(AuthContext);
+     const [errorMessage, setErrorMessage] = useState(false);
+
+     // sign in using google account
      const handleGoogleSignIn = () => {
           if (user) {
-               alert("user already logged in");
+               return alert("user already logged in");
           }
-
+          // sign in using google account
           googleSignIn()
                .then((result) => {
                     return Swal.fire(
@@ -24,13 +27,46 @@ const Login = () => {
                     console.log(error);
                });
      };
+
+     const handleLogin = (e) => {
+          if (user) {
+               return alert("user already logged in");
+          }
+          e.preventDefault();
+          const form = e.target;
+          const email = form.email.value;
+          const password = form.password.value;
+          setErrorMessage("");
+          // sign in user using email and password
+          userSignIn(email, password)
+               .then((result) => {
+                    console.log(result.user);
+                    Swal.fire(
+                         "Good job!",
+                         "User login successfully",
+                         "success"
+                    );
+
+                    e.target.email.value = "";
+                    e.target.password.value = "";
+               })
+               .catch((error) => {
+                    console.log(error);
+                    setErrorMessage(
+                         "User login failed..! Invalid email or password"
+                    );
+               });
+     };
      return (
           <div>
                <div>
                     <p className="text-3xl font-bold mb-6 text-center text-[#fcb900]">
                          Login Page
                     </p>
-                    <form className="w-4/5 md:w-1/2 mx-auto">
+                    <form
+                         onSubmit={handleLogin}
+                         className="w-4/5 md:w-1/2 mx-auto"
+                    >
                          <div className="form-control">
                               <label className="label">
                                    <span className="label-text">Email</span>
@@ -38,7 +74,6 @@ const Login = () => {
                               <input
                                    type="text"
                                    name="email"
-                                   // ref={emailRef}
                                    placeholder="Email"
                                    className="input input-bordered"
                                    required
@@ -76,13 +111,13 @@ const Login = () => {
                                    )}
                               </span>
                          </div>
-                         {/* <h3>
-                         {errorMessage && (
-                              <p className="text-red-600 pt-1">
-                                   {errorMessage}
-                              </p>
-                         )}
-                    </h3> */}
+                         <h3>
+                              {errorMessage && (
+                                   <p className="text-red-600 pt-1">
+                                        {errorMessage}
+                                   </p>
+                              )}
+                         </h3>
                          <div className="form-control mt-6">
                               <button className="btn text-white bg-[#ff6900]">
                                    Login

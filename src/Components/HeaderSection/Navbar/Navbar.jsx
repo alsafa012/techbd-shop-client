@@ -1,7 +1,16 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
+import { AuthContext } from "../../../Provider/AuthProvider";
 
 const Navbar = () => {
+     const { user, userSignOut } = useContext(AuthContext);
+     const handleSignOut = () => {
+          userSignOut()
+               .then(() => {
+                    alert("sign out");
+               })
+               .catch();
+     };
      const navLists = (
           <>
                <li>
@@ -97,57 +106,61 @@ const Navbar = () => {
                                         tabIndex={0}
                                         className="btn btn-ghost btn-circle avatar"
                                    >
-                                        <Link to="/login">
-                                             <button className="">
-                                                  Sign Up
-                                             </button>
-                                        </Link>
+                                        {user ? (
+                                             <div className="w-10 rounded-full">
+                                                  <img src={user.photoURL} />
+                                             </div>
+                                        ) : (
+                                             <Link to="/login">
+                                                  <button className="">
+                                                       Sign Up
+                                                  </button>
+                                             </Link>
+                                        )}
                                    </label>
 
-                                   <div>
-                                        <ul
-                                             tabIndex={0}
-                                             className="mt-3 z-[1] p-2 shadow menu menu-sm dropdown-content bg-base-100 rounded-box w-52"
-                                        >
-                                             <div>
-                                                  <li>
-                                                       <button className="font-medium">
-                                                            Sign Out
-                                                       </button>
-
-                                                       {/* <Link to="/login">
-                                                       <button className="">
-                                                            Sign Up
-                                                       </button>
-                                                  </Link>
-                                                  <Link>
-                                                       <button>
-                                                            UpdateUser
-                                                       </button>
-                                                  </Link> */}
-                                                  </li>
-                                             </div>
-                                        </ul>
-                                   </div>
+                                   {user && (
+                                        <div>
+                                             <ul
+                                                  tabIndex={0}
+                                                  className="mt-3 z-[1] p-2 shadow menu menu-sm dropdown-content bg-base-100 rounded-box w-52"
+                                             >
+                                                  <div>
+                                                       <li>
+                                                            <a className="font-medium">
+                                                                 User:
+                                                                 {
+                                                                      user.displayName
+                                                                 }
+                                                            </a>
+                                                       </li>
+                                                       <li>
+                                                            {user ? (
+                                                                 <button
+                                                                      className="font-medium"
+                                                                      onClick={
+                                                                           handleSignOut
+                                                                      }
+                                                                 >
+                                                                      Sign Out
+                                                                 </button>
+                                                            ) : (
+                                                                 <Link to="/login">
+                                                                      <button className="">
+                                                                           Sign
+                                                                           Up
+                                                                      </button>
+                                                                 </Link>
+                                                            )}
+                                                      
+                                                       </li>
+                                                  </div>
+                                              
+                                             </ul>
+                                        </div>
+                                   )}
                               </div>
-                              {/* {user && (
-                         <div className="w-10 rounded-full">
-                              <img
-                                   className="rounded-full"
-                                   src={user.photoURL}
-                              />
-                              <p>{user.email}</p>
-                         </div>
-                    )}
-                    {user ? (
-                         <button className="btn" onClick={handleSignOut}>
-                              Sign Out
-                         </button>
-                    ) : (
-                         <Link to="/login">
-                              <button className="btn">Sign Up</button>
-                         </Link>
-                    )} */}
+                            
                          </div>
                     </div>
                </div>

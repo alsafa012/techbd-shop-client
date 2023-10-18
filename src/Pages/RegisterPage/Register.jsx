@@ -1,13 +1,13 @@
 import React, { useContext, useState } from 'react';
-// import { useNavigate } from 'react-router-dom';
 import { FiEye, FiEyeOff } from "react-icons/fi";
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../Provider/AuthProvider';
+import Swal from 'sweetalert2';
 
 const Register = () => {
      const [showPassword, setShowPassword] = useState(false);
      const [errorMessage,setErrorMessage]=useState(false);
-     const {createUser}=useContext(AuthContext)
+     const {createUser ,updateUserProfile}=useContext(AuthContext)
      
      const handleRegister =(e)=>{
           e.preventDefault();
@@ -18,6 +18,8 @@ const Register = () => {
           const password = form.password.value
           console.log(name, photo, email, password)
           // validation
+          setErrorMessage("");
+
           if (password.length < 6) {
                setErrorMessage("Please enter at least 6 character password");
                return;
@@ -34,6 +36,17 @@ const Register = () => {
           createUser(email, password)
           .then(result=>{
                console.log(result.user)
+               updateUserProfile(name, photo)
+               .then(()=>{
+               })
+               .catch(error=>{
+                    console.log(error)
+               })
+               Swal.fire(
+                    'Good job!',
+                    'User created successfully',
+                    'success'
+                  )
           })
           .catch(error=>{
                console.log(error.message)
