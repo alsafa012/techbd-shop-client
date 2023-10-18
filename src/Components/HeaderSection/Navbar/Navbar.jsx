@@ -29,6 +29,20 @@ const Navbar = () => {
                </li>
                <li>
                     <NavLink
+                         to="/addProduct"
+                         className={({ isActive, isPending }) =>
+                              isPending
+                                   ? "pending"
+                                   : isActive
+                                   ? "text-[#ff6900] underline"
+                                   : ""
+                         }
+                    >
+                         Add Product
+                    </NavLink>
+               </li>
+               <li>
+                    <NavLink
                          to="/register"
                          className={({ isActive, isPending }) =>
                               isPending
@@ -60,7 +74,7 @@ const Navbar = () => {
      return (
           <div>
                <div>
-                    <div className="navbar bg-base-100">
+                    <div className="navbar bg-base-100 bg-gradient-to-r from-blue-900 to-blue-900">
                          <div className="navbar-start">
                               <div className="dropdown">
                                    <label
@@ -90,8 +104,8 @@ const Navbar = () => {
                                    </ul>
                               </div>
 
-                              <p className="btn btn-ghost text-xl md:text-2xl text-[#fcb900] font-extrabold italic">
-                                   RJ AGENCY
+                              <p className="btn btn-ghost text-xl md:text-2xl text-white font-extrabold italic">
+                                   RJ Tech
                               </p>
                          </div>
                          <div className="navbar-center hidden lg:flex">
