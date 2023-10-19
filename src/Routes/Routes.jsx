@@ -7,6 +7,9 @@ import Register from '../Pages/RegisterPage/Register';
 import HomePage from '../Pages/HomePage/HomePage';
 import Login from '../Pages/LoginPage/Login';
 import AddProduct from '../Pages/AddProductPage/AddProduct';
+import BrandDetails from '../Components/BrandDetails/BrandDetails';
+import BrandDetailsPage from '../Pages/BrandDetailsPage/BrandDetailsPage';
+import MyCart from '../Pages/MyCart/MyCart';
 
 const myCreatedRouter = createBrowserRouter([
      {
@@ -22,6 +25,21 @@ const myCreatedRouter = createBrowserRouter([
                {
                     path: "/register",
                     element:<Register></Register>
+               },
+               {
+                    path: "/myCart",
+                    element:<MyCart></MyCart>,
+                    loader:()=>fetch('http://localhost:5000/addCart')
+               },
+               {
+                    path: "/data/:brandName",
+                    element:<BrandDetails></BrandDetails>,
+                    loader:()=>fetch('http://localhost:5000/products')
+               },
+               {
+                    path: "/details/:id",
+                    element:<BrandDetailsPage></BrandDetailsPage>,
+                    loader:({params})=>fetch(`http://localhost:5000/products/${params.id}`)
                },
                {
                     path: "/addProduct",

@@ -1,26 +1,31 @@
 [
-     {
-          "brand": "Samsung",
+     {    "_id":"1",
+          "brandName": "Samsung",
           "brand_img": "https://i.ibb.co/G5cyKh2/samsung-logo-4-BA7-D9-F6-D7-seeklogo-com.png"
      },
      {
-          "brand": "Apple",
+          "_id":"2",
+          "brandName": "Apple",
           "brand_img": "https://i.ibb.co/B28zc3w/pngimg-com-apple-logo-PNG19689.png"
      },
      {
-          "brand": "Sony",
+          "_id":"3",
+          "brandName": "Sony",
           "brand_img": "https://i.ibb.co/zmDNTm1/sony-phone.jpg"
      },
      {
-          "brand": "Xiaomi",
+          "_id":"4",
+          "brandName": "Xiaomi",
           "brand_img": "https://i.ibb.co/FqbcyGV/Xiaomi-Logo.png"
      },
      {
-          "brand": "lg",
+          "_id":"5",
+          "brandName": "lg",
           "brand_img": "https://i.ibb.co/k8W5JYR/lggg.png"
      },
      {
-          "brand": "Google",
+          "_id":"6",
+          "brandName": "Google",
           "brand_img": "https://i.ibb.co/x1hwG0w/googlee.png"
      }
 ]

@@ -43,6 +43,20 @@ const Navbar = () => {
                </li>
                <li>
                     <NavLink
+                         to="/myCart"
+                         className={({ isActive, isPending }) =>
+                              isPending
+                                   ? "pending"
+                                   : isActive
+                                   ? "text-[#ff6900] underline"
+                                   : ""
+                         }
+                    >
+                         My Cart
+                    </NavLink>
+               </li>
+               <li>
+                    <NavLink
                          to="/register"
                          className={({ isActive, isPending }) =>
                               isPending
@@ -74,7 +88,7 @@ const Navbar = () => {
      return (
           <div>
                <div>
-                    <div className="navbar bg-base-100 bg-gradient-to-r from-blue-900 to-blue-900">
+                    <div className="text-white navbar bg-base-100 bg-gradient-to-r from-blue-900 to-blue-900">
                          <div className="navbar-start">
                               <div className="dropdown">
                                    <label
@@ -103,6 +117,7 @@ const Navbar = () => {
                                         {navLists}
                                    </ul>
                               </div>
+                              <img className="rounded-full h-[50px] w-[50px]" src="https://i.ibb.co/dQ14xFH/sasas.jpg" alt="" />
 
                               <p className="btn btn-ghost text-xl md:text-2xl text-white font-extrabold italic">
                                    RJ Tech

@@ -52,7 +52,7 @@ const Footer = () => {
                     <aside>
                          <p>
                               Copyright © 2023 - All right reserved by RJ
-                              Industries Ltd.
+                              TECH BD.
                          </p>
                     </aside>
                </footer>

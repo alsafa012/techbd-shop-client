@@ -60,7 +60,7 @@ const Login = () => {
      return (
           <div>
                <div>
-                    <p className="text-3xl font-bold mb-6 text-center text-[#fcb900]">
+                    <p className="text-3xl font-bold mb-6 text-center text-blue-500 mt-5">
                          Login Page
                     </p>
                     <form
@@ -119,7 +119,7 @@ const Login = () => {
                               )}
                          </h3>
                          <div className="form-control mt-6">
-                              <button className="btn text-white bg-[#ff6900]">
+                              <button className="btn text-white bg-gradient-to-r from-blue-900 to-blue-900">
                                    Login
                               </button>
                          </div>
@@ -146,7 +146,7 @@ const Login = () => {
                     <p className="text-center py-4">
                          Do not Have An Account ?
                          <Link
-                              className="text-green-500 font-bold hover:underline ml-1"
+                              className="text-green-300 font-bold hover:underline ml-1"
                               to="/register"
                          >
                               Sign Up

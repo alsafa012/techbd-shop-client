@@ -1,7 +1,8 @@
 import React from "react";
+import Swal from "sweetalert2";
 
 const AddProduct = () => {
-     const handleAddProduct =(e)=>{
+     const handleAddProduct = (e) => {
           e.preventDefault();
           // console.log("sasadasdasd")
           const form = e.target;
@@ -12,16 +13,40 @@ const AddProduct = () => {
           const productPrice = form.productPrice.value;
           const ShortDescription = form.ShortDescription.value;
           const rating = form.rating.value;
-          console.log(image,productName ,brandName, productType, productPrice,ShortDescription,rating)
+          const allData = {
+               image,
+               productName,
+               brandName,
+               productType,
+               productPrice,
+               ShortDescription,
+               rating,
+          };
+          console.log(allData);
 
+          fetch("http://localhost:5000/products", {
+               method: "POST",
+               headers: {
+                    "content-type": "application/json",
+               },
+               body: JSON.stringify(allData),
+          })
+               .then((res) => res.json())
+               .then((data) => {
+                    if(data.acknowledged){
+                         Swal.fire(
+                              "Good job!",
+                              "Product added successfully",
+                              "success"
+                         );
+                    }
+                    console.log(data);
+               });
 
-
-
-
-          form.reset()
-     }
+          form.reset();
+     };
      return (
-          <div className=" bg-gradient-to-r from-blue-700 to-blue-400 min-h-screen">
+          <div className=" bg-gradient-to-r from-blue-700 to-blue-400 min-h-screen container mx-auto">
                <div className="container mx-auto">
                     <form onSubmit={handleAddProduct} className="mx-5">
                          {/* form 4th row */}
@@ -47,7 +72,7 @@ const AddProduct = () => {
                               <div className="form-control md:w-1/2">
                                    <label className="label">
                                         <span className="label-text font-bold">
-                                        Product Name
+                                             Product Name
                                         </span>
                                    </label>
                                    <label className="input-group">
@@ -142,11 +167,11 @@ const AddProduct = () => {
                               </div>
                          </div>
                          <div className="w-[50%] mx-auto">
-                         <input
-                              className="btn mt-4 w-full bg-gradient-to-r from-blue-700 to-blue-900 border-none text-white"
-                              type="submit"
-                              value="Add Product"
-                         />
+                              <input
+                                   className="btn mt-4 w-full bg-gradient-to-r from-blue-700 to-blue-900 border-none text-white"
+                                   type="submit"
+                                   value="Add Product"
+                              />
                          </div>
                     </form>
                </div>

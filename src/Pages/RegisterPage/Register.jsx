@@ -54,7 +54,7 @@ const Register = () => {
      }
      return (
           <div>
-          <p className=" text-3xl font-bold mb-6 text-center text-[#fcb900]">
+          <p className=" text-3xl font-bold mb-6 text-center text-blue-500 mt-5">
                Sign Up Page
           </p>
 
@@ -143,7 +143,7 @@ const Register = () => {
                     )}
                </h3>
                <div className="form-control mt-6">
-                    <button className="btn text-white bg-[#ff6900]">
+                    <button className="btn text-white bg-gradient-to-r from-blue-900 to-blue-900">
                          Sign Up
                     </button>
                </div>
