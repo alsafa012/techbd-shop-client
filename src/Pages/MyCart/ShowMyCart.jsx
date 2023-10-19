@@ -1,8 +1,23 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import Swal from "sweetalert2";
 
-const ShowMyCart = ({ product }) => {
+const ShowMyCart = ({ product,addProduct,setAddProduct }) => {
+     const handleRemoveProduct = (id)=>{
+          fetch(
+               `http://localhost:5000/addCart/${id}`,
+               {
+                    method: "DELETE",
+               }
+          )
+               .then((res) => res.json())
+               .then((data) => {
+                    console.log(data);
+                 
+               });
+     }
      const {
+          _id,
           productName,
           brandName,
           image,
@@ -35,7 +50,7 @@ const ShowMyCart = ({ product }) => {
 
                               <Link>
                                    <button
-                                        // onClick={handleAddProduct}
+                                        onClick={()=>handleRemoveProduct(_id)}
                                         className="btn mt-3 text-white bg-gradient-to-r from-blue-700 to-blue-900"
                                    >
                                         Remove product
