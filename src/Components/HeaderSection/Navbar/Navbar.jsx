@@ -1,13 +1,18 @@
 import React, { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../../../Provider/AuthProvider";
+import Swal from "sweetalert2";
 
 const Navbar = () => {
      const { user, userSignOut } = useContext(AuthContext);
      const handleSignOut = () => {
           userSignOut()
                .then(() => {
-                    alert("sign out");
+                    Swal.fire(
+                         "Good job!",
+                         "User Signed successfully",
+                         "success"
+                    );
                })
                .catch();
      };
@@ -41,20 +46,22 @@ const Navbar = () => {
                          Add Product
                     </NavLink>
                </li>
-               {user && <li>
-                    <NavLink
-                         to="/myCart"
-                         className={({ isActive, isPending }) =>
-                              isPending
-                                   ? "pending"
-                                   : isActive
-                                   ? "text-[#ff6900] underline"
-                                   : ""
-                         }
-                    >
-                         My Cart
-                    </NavLink>
-               </li>}
+               {user && (
+                    <li>
+                         <NavLink
+                              to="/myCart"
+                              className={({ isActive, isPending }) =>
+                                   isPending
+                                        ? "pending"
+                                        : isActive
+                                        ? "text-[#ff6900] underline"
+                                        : ""
+                              }
+                         >
+                              My Cart
+                         </NavLink>
+                    </li>
+               )}
                {/* <li>
                     <NavLink
                          to="/register"
@@ -69,7 +76,7 @@ const Navbar = () => {
                          Register
                     </NavLink>
                </li> */}
-               <li>
+               {!user && <li>
                     <NavLink
                          to="/login"
                          className={({ isActive, isPending }) =>
@@ -82,15 +89,15 @@ const Navbar = () => {
                     >
                          Login
                     </NavLink>
-               </li>
+               </li>}
           </>
      );
      return (
           <div>
                <div>
-                    <div className="text-white navbar bg-base-100 bg-gradient-to-r from-blue-900 to-blue-900">
+                    <div className=" navbar bg-base-100 bg-gradient-to-r from-blue-900 to-blue-900">
                          <div className="navbar-start">
-                              <div className="dropdown">
+                              <div className="dropdown ">
                                    <label
                                         tabIndex={0}
                                         className="btn btn-ghost lg:hidden"
@@ -112,19 +119,23 @@ const Navbar = () => {
                                    </label>
                                    <ul
                                         tabIndex={0}
-                                        className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
+                                        className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52 "
                                    >
                                         {navLists}
                                    </ul>
                               </div>
-                              <img className="rounded-full h-[50px] w-[50px]" src="https://i.ibb.co/dQ14xFH/sasas.jpg" alt="" />
+                              <img
+                                   className="rounded-full h-[50px] w-[50px]"
+                                   src="https://i.ibb.co/dQ14xFH/sasas.jpg"
+                                   alt=""
+                              />
 
                               <p className="btn btn-ghost text-xl md:text-2xl text-white font-extrabold italic">
                                    RJ Tech
                               </p>
                          </div>
                          <div className="navbar-center hidden lg:flex">
-                              <ul className="menu menu-horizontal px-1">
+                              <ul className="menu menu-horizontal px-1 text-white">
                                    {navLists}
                               </ul>
                          </div>
@@ -181,15 +192,12 @@ const Navbar = () => {
                                                                       </button>
                                                                  </Link>
                                                             )}
-                                                      
                                                        </li>
                                                   </div>
-                                              
                                              </ul>
                                         </div>
                                    )}
                               </div>
-                            
                          </div>
                     </div>
                </div>

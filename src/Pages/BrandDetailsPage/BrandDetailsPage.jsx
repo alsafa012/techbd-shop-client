@@ -74,51 +74,15 @@ const BrandDetailsPage = () => {
                                    Description: {ShortDescription.slice(0, 80)}
                               </p>
 
-                              {/* {ShortDescription.length > 20 && (
-                                   <p>
-                                        Description:{" "}
-                                        {ShortDescription.slice(0, 80)} .....
-                                   </p>
-                              )} */}
                               <Link>
                                    <button
                                         onClick={handleAddProduct}
                                         className="btn mt-3 text-white bg-gradient-to-r from-blue-700 to-blue-900"
                                    >
-                                        Add to Cart{" "}
+                                        Add to Cart
                                    </button>
                               </Link>
-
-                              {/* {ShortDescription.length > 20 ? (
-                                   <p>
-                                        {ShortDescription.slice(0, 200)}...
-                                        {/* <Link
-                                             to={`news/${_id}`}
-                                             className="text-[#FF8C47] hover:underline font-bold"
-                                        >
-                                             Read more
-                                        </Link> */}
-                              {/* </p>
-                              ) : (
-                                   <p>{ShortDescription}</p>
-                              // )} */}
                          </div>
-                         {/* <div className="card-actions justify-end">
-                              <div className="btn-group btn-group-vertical space-y-2 mr-4">
-                                   <Link to={`/details/${_id}`}>
-                                        <button className="btn">View</button>
-                                   </Link>
-                                   <Link to={`/updateCoffee/${_id}`}>
-                                        <button className="btn">Edit</button>
-                                   </Link>
-                                   <button
-                                        // onClick={() => handleDelete(_id)}
-                                        className="btn"
-                                   >
-                                        x
-                                   </button>
-                              </div>
-                         </div> */}
                     </div>
                </div>
           </div>

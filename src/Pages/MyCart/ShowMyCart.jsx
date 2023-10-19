@@ -2,30 +2,39 @@ import React from "react";
 import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
 
-const ShowMyCart = ({ product,addProduct,setAddProduct }) => {
-     const handleRemoveProduct = (id)=>{
-          fetch(
-               `http://localhost:5000/addCart/${id}`,
-               {
-                    method: "DELETE",
+const ShowMyCart = ({ product, addProduct, setAddProduct }) => {
+     const handleRemoveProduct = (id) => {
+          Swal.fire({
+               title: "Are you sure?",
+               text: "You won't be able to revert this!",
+               icon: "warning",
+               showCancelButton: true,
+               confirmButtonColor: "#3085d6",
+               cancelButtonColor: "#d33",
+               confirmButtonText: "Yes, delete it!",
+          }).then((result) => {
+               if (result.isConfirmed) {
+                    fetch(`http://localhost:5000/addCart/${id}`, {
+                         method: "DELETE",
+                    })
+                         .then((res) => res.json())
+                         .then((data) => {
+                              console.log(data);
+                              if (data.deletedCount > 0) {
+                                   const remainingUser = addProduct.filter(
+                                        (item) => item._id !== id
+                                   );
+                                   setAddProduct(remainingUser);
+                                   Swal.fire(
+                                        "Deleted!",
+                                        "User has been delete successfully",
+                                        "success"
+                                   );
+                              }
+                         });
                }
-          )
-               .then((res) => res.json())
-               .then((data) => {
-                    console.log(data);
-                    if (data.deletedCount > 0) {
-                         const remainingUser = addProduct.filter(
-                              (item) => item._id !== id
-                         );
-                         setAddProduct(remainingUser);
-                         Swal.fire(
-                              "Deleted!",
-                              "User has been delete successfully",
-                              "success"
-                         );
-                    }
-               });
-     }
+          });
+     };
      const {
           _id,
           productName,
@@ -60,7 +69,7 @@ const ShowMyCart = ({ product,addProduct,setAddProduct }) => {
 
                               <Link>
                                    <button
-                                        onClick={()=>handleRemoveProduct(_id)}
+                                        onClick={() => handleRemoveProduct(_id)}
                                         className="btn mt-3 text-white bg-gradient-to-r from-blue-700 to-blue-900"
                                    >
                                         Remove product

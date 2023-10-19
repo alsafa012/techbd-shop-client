@@ -1,6 +1,6 @@
 import React, { useContext, useState } from "react";
 import { FiEye, FiEyeOff } from "react-icons/fi";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../Provider/AuthProvider";
 import Swal from "sweetalert2";
 
@@ -8,29 +8,61 @@ const Login = () => {
      const [showPassword, setShowPassword] = useState(false);
      const { user, googleSignIn, userSignIn } = useContext(AuthContext);
      const [errorMessage, setErrorMessage] = useState(false);
+     const location = useLocation();
+     const navigate = useNavigate();
 
      // sign in using google account
      const handleGoogleSignIn = () => {
           if (user) {
-               return alert("user already logged in");
+               return Swal.fire({
+                    title: "Error!",
+                    text: "user already logged in",
+                    icon: "error",
+                    // confirmButtonText: "Cool",
+               });
           }
           // sign in using google account
           googleSignIn()
                .then((result) => {
+                    navigate(location?.state ? location.state : "/");
                     return Swal.fire(
                          "Good job!",
-                         "You clicked the button!",
+                         "You Signed In With Google Successfully",
                          "success"
                     );
                })
                .catch((error) => {
                     console.log(error);
                });
+          // Swal.fire({
+          //      title: 'Are you sure?',
+          //      text: "You won't be able to revert this!",
+          //      icon: 'warning',
+          //      showCancelButton: true,
+          //      confirmButtonColor: '#3085d6',
+          //      cancelButtonColor: '#d33',
+          //      confirmButtonText: 'Yes, delete it!'
+          //    }).then((result) => {
+          //      if (result.isConfirmed) {
+          //        Swal.fire(
+          //          'Deleted!',
+          //          'Your file has been deleted.',
+          //          'success'
+          //        )
+          //      }
+          //    })
      };
 
      const handleLogin = (e) => {
           if (user) {
-               return alert("user already logged in");
+               // return alert("user already logged in");
+               Swal.fire({
+                    title: "Error!",
+                    text: "user already logged in",
+                    icon: "error",
+                    confirmButtonText: "Cool",
+               });
+               // return;
           }
           e.preventDefault();
           const form = e.target;
@@ -40,6 +72,7 @@ const Login = () => {
           // sign in user using email and password
           userSignIn(email, password)
                .then((result) => {
+                    navigate(location?.state ? location.state : "/");
                     console.log(result.user);
                     Swal.fire(
                          "Good job!",

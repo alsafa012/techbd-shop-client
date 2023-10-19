@@ -4,7 +4,7 @@ import Swal from "sweetalert2";
 const AddProduct = () => {
      const handleAddProduct = (e) => {
           e.preventDefault();
-          // console.log("sasadasdasd")
+          
           const form = e.target;
           const image = form.image.value;
           const productName = form.productName.value;

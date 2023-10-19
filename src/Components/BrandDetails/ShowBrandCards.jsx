@@ -37,24 +37,10 @@ const ShowBrandCards = ({ brand }) => {
                                         {ShortDescription.slice(0, 80)} .....
                                    </p>
                               )}
-
-                              {/* {ShortDescription.length > 20 ? (
-                                   <p>
-                                        {ShortDescription.slice(0, 200)}...
-                                        {/* <Link
-                                             to={`news/${_id}`}
-                                             className="text-[#FF8C47] hover:underline font-bold"
-                                        >
-                                             Read more
-                                        </Link> */}
-                              {/* </p>
-                              ) : (
-                                   <p>{ShortDescription}</p>
-                              // )} */}
                               <Link to={`/details/${_id}`}>
                                    <button className="btn text-white bg-gradient-to-r from-blue-700 to-blue-900">Details</button>
                               </Link>
-                              <button className="btn ml-5 text-white bg-gradient-to-r from-blue-700 to-blue-900">Update Here</button>
+                              <Link to={`/updateProduct/${_id}`}><button className="btn ml-5 text-white bg-gradient-to-r from-blue-700 to-blue-900">Update Here</button></Link>
                          </div>
                          {/* <div className="card-actions justify-end">
                               <div className="btn-group btn-group-vertical space-y-2 mr-4">
