@@ -13,7 +13,17 @@ const ShowMyCart = ({ product,addProduct,setAddProduct }) => {
                .then((res) => res.json())
                .then((data) => {
                     console.log(data);
-                 
+                    if (data.deletedCount > 0) {
+                         const remainingUser = addProduct.filter(
+                              (item) => item._id !== id
+                         );
+                         setAddProduct(remainingUser);
+                         Swal.fire(
+                              "Deleted!",
+                              "User has been delete successfully",
+                              "success"
+                         );
+                    }
                });
      }
      const {
