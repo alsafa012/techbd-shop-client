@@ -41,7 +41,7 @@ const Navbar = () => {
                          Add Product
                     </NavLink>
                </li>
-               <li>
+               {user && <li>
                     <NavLink
                          to="/myCart"
                          className={({ isActive, isPending }) =>
@@ -54,8 +54,8 @@ const Navbar = () => {
                     >
                          My Cart
                     </NavLink>
-               </li>
-               <li>
+               </li>}
+               {/* <li>
                     <NavLink
                          to="/register"
                          className={({ isActive, isPending }) =>
@@ -68,7 +68,7 @@ const Navbar = () => {
                     >
                          Register
                     </NavLink>
-               </li>
+               </li> */}
                <li>
                     <NavLink
                          to="/login"
