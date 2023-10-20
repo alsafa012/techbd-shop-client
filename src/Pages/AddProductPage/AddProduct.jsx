@@ -48,6 +48,7 @@ const AddProduct = () => {
      return (
           <div className=" bg-gradient-to-r from-blue-700 to-blue-400 min-h-screen container mx-auto">
                <div className="container mx-auto">
+                    <h3 className="text-white text-center pt-5 text-2xl md:text-3xl font-bold">Add Product</h3>
                     <form onSubmit={handleAddProduct} className="mx-5">
                          {/* form 4th row */}
                          {/* <div className=""> */}

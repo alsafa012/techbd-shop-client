@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 // import { Link } from 'react-router-dom';
 
 const Footer = () => {
@@ -7,8 +8,8 @@ const Footer = () => {
                <div>
                <footer className="footer footer-center p-10 bg-[#272530] text-white font-medium rounded">
                     <nav className="grid grid-flow-col gap-4">
-                         {/* <Link className="link link-hover" to="/about">About us</Link>
-                         <Link className="link link-hover" to="/contact">Contact</Link> */}
+                         <Link className="link link-hover" to="/about">About us</Link>
+                         <Link className="link link-hover" to="/contact">Contact</Link>
                          <a className="link link-hover">Jobs</a>
                          <a className="link link-hover">Press kit</a>
                     </nav>

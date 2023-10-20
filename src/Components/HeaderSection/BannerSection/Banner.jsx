@@ -13,18 +13,14 @@ const Banner = () => {
                     <div className="hero-overlay bg-opacity-60"></div>
                     <div className="hero-content text-center text-neutral-content">
                          <div className="max-w-md">
-                              <h1 className="mb-5 text-5xl font-bold">
-                                   Hello there
+                              <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold">
+                                  Welcome to RJ Tech BD
                               </h1>
-                              <p className="mb-5">
-                                   Provident cupiditate voluptatem et in.
-                                   Quaerat fugiat ut assumenda excepturi
-                                   exercitationem quasi. In deleniti eaque aut
-                                   repudiandae et a id nisi.
+                              <p className="mt-2">
+                              Welcome to RJ Tech BD: Your Ultimate Tech Destination.Your Tech Dreams Start Here: RJ Tech BD.
                               </p>
-                              <button className="btn btn-primary">
-                                   Get Started
-                              </button>
+                              <p>Shop Smart, Shop Tech with RJ Tech BD.</p>
+                              
                          </div>
                     </div>
                </div>

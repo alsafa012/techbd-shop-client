@@ -46,6 +46,7 @@ const Navbar = () => {
                          Add Product
                     </NavLink>
                </li>
+
                {user && (
                     <li>
                          <NavLink
@@ -76,9 +77,25 @@ const Navbar = () => {
                          Register
                     </NavLink>
                </li> */}
-               {!user && <li>
+               {!user && (
+                    <li>
+                         <NavLink
+                              to="/login"
+                              className={({ isActive, isPending }) =>
+                                   isPending
+                                        ? "pending"
+                                        : isActive
+                                        ? "text-[#ff6900] underline"
+                                        : ""
+                              }
+                         >
+                              Login
+                         </NavLink>
+                    </li>
+               )}
+               <li>
                     <NavLink
-                         to="/login"
+                         to="/contact"
                          className={({ isActive, isPending }) =>
                               isPending
                                    ? "pending"
@@ -87,9 +104,23 @@ const Navbar = () => {
                                    : ""
                          }
                     >
-                         Login
+                         Contact Us
                     </NavLink>
-               </li>}
+               </li>
+               <li>
+                    <NavLink
+                         to="/about"
+                         className={({ isActive, isPending }) =>
+                              isPending
+                                   ? "pending"
+                                   : isActive
+                                   ? "text-[#ff6900] underline"
+                                   : ""
+                         }
+                    >
+                         About us
+                    </NavLink>
+               </li>
           </>
      );
      return (
@@ -152,7 +183,7 @@ const Navbar = () => {
                                              </div>
                                         ) : (
                                              <Link to="/login">
-                                                  <button className="">
+                                                  <button className="text-white">
                                                        Sign Up
                                                   </button>
                                              </Link>

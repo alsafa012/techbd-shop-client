@@ -12,6 +12,8 @@ import BrandDetailsPage from "../Pages/BrandDetailsPage/BrandDetailsPage";
 import MyCart from "../Pages/MyCart/MyCart";
 import PrivateRoute from "./PrivateRoute";
 import UpdateProduct from "../Pages/AddProductPage/UpdateProduct";
+import ContactUs from "../Pages/ContactUsPage/ContactUs";
+import AboutUs from "../Pages/AboutUsPage/AboutUs";
 
 const myCreatedRouter = createBrowserRouter([
      {
@@ -59,6 +61,14 @@ const myCreatedRouter = createBrowserRouter([
                {
                     path: "/login",
                     element: <Login></Login>,
+               },
+               {
+                    path: "/contact",
+                    element: <ContactUs></ContactUs>,
+               },
+               {
+                    path: "/about",
+                    element: <AboutUs></AboutUs>,
                },
                {
                     path: "/updateProduct/:id",
