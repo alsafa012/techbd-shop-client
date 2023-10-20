@@ -1,11 +1,16 @@
-import React from "react";
+import React, { useContext } from "react";
 import Rating from "react-rating";
 import { Link, useLoaderData } from "react-router-dom";
 import Swal from "sweetalert2";
+import { AuthContext } from "../../Provider/AuthProvider";
 
 const BrandDetailsPage = () => {
+     const {user}=useContext(AuthContext);
+     // console.log(user.email);
      const singleInfo = useLoaderData();
-     console.log(singleInfo);
+     // console.log(singleInfo);
+    
+     
      const {
           productName,
           brandName,
@@ -17,6 +22,8 @@ const BrandDetailsPage = () => {
      } = singleInfo;
 
      const handleAddProduct = () => {
+          const currentUser = user.email;
+          // console.log(currentUser);
           const productName = singleInfo.productName;
           const brandName = singleInfo.brandName;
           const image = singleInfo.image;
@@ -25,6 +32,7 @@ const BrandDetailsPage = () => {
           const productType = singleInfo.productType;
           const rating = singleInfo.rating;
           const allData = {
+               currentUser,
                productName,
                brandName,
                image,

@@ -5,7 +5,7 @@ const AboutUs = () => {
      return (
           <div>
                <div>
-                    <h1 className="w-[300px] mx-auto mb-5 text-center text-2xl border-b-4 border-blue-400 md:text-4xl lg:text-5xl font-bold text-blue-400 mt-8 md:mt-16">
+                    <h1 className="w-[300px] mx-auto mb-5 text-center text-2xl border-b-4 border-blue-600 md:text-4xl lg:text-5xl font-bold text-blue-600 mt-8 md:mt-16">
                          About Us
                     </h1>
                     {/* <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-2 text-center my-10"></div> */}
