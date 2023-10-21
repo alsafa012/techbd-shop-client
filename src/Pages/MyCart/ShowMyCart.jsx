@@ -28,7 +28,7 @@ const ShowMyCart = ({ product, addProduct, setAddProduct }) => {
                                    setAddProduct(remainingUser);
                                    Swal.fire(
                                         "Deleted!",
-                                        "User has been delete successfully",
+                                        "Product has been delete successfully",
                                         "success"
                                    );
                               }
