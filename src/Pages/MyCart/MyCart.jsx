@@ -20,7 +20,7 @@ const MyCart = () => {
      }, [myUser, productData]);
 
      return (
-          <div className="container mx-auto">
+          <div className="container mx-auto min-h-screen">
                {addProduct.length === 0 ? (
                     <div className="text-center mx-auto text-xl md:text-3xl font-bold mt-20 space-y-2">
                          <h1>Oops...!</h1>
@@ -32,7 +32,7 @@ const MyCart = () => {
                          </Link>
                     </div>
                ) : (
-                    <div className="grid md:grid-cols-2 gap-5">
+                    <div className="grid md:grid-cols-2 gap-5 mt-3">
                          {addProduct.map((product) => (
                               <ShowMyCart
                                    addProduct={addProduct}

@@ -12,7 +12,7 @@ const ContactUs = () => {
                          Contact Us
                     </h1>
                     <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 text-center my-10">
-                         <div className="space-y-4 shadow-xl rounded-lg p-5">
+                         <div className="space-y-4 shadow-xl rounded-lg p-5 bg-white">
                               <div className="flex justify-center text-5xl">
                                    <p>
                                         <CiLocationOn></CiLocationOn>
@@ -27,7 +27,7 @@ const ContactUs = () => {
                                    <p>Dhaka, ON BD</p>
                               </div>
                          </div>
-                         <div className="space-y-4 shadow-xl rounded-lg p-5">
+                         <div className="space-y-4 shadow-xl rounded-lg p-5 bg-white">
                               <div className="flex justify-center text-5xl">
                                    <p>
                                         <AiOutlineFieldTime></AiOutlineFieldTime>
@@ -52,7 +52,7 @@ const ContactUs = () => {
                                    </p>
                               </div>
                          </div>
-                         <div className=" space-y-4 shadow-xl rounded-lg p-5">
+                         <div className=" space-y-4 shadow-xl rounded-lg p-5 bg-white">
                               <div className="flex justify-center text-5xl">
                                    <p>
                                         <PiPhoneDuotone></PiPhoneDuotone>

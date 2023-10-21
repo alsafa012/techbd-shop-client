@@ -8,13 +8,13 @@ const FirstExtraSection = () => {
      return (
           <div className='container mx-auto'>
           <div className="my-5 md:my-14 ">
-          <div>
-               <h2 className="text-center text-2xl md:text-3xl font-bold">
+          <div className=''>
+               <h2 className=" text-center text-2xl md:text-3xl font-bold pb-5">
                    <span className='text-blue-400'>Hello! </span> Buy Your Future Tech From Us..
                </h2>
-               <p className="w-[50%] mx-auto text-center my-5 text-sm font-light">
+               {/* <p className="bg-red-50 w-[50%] mx-auto text-center my-5 text-sm font-light">
                     
-               </p>
+               </p> */}
           </div>
           <div className="grid gap-5  md:grid-cols-2 lg:grid-cols-4 font-light mx-4 md:mx-auto">
                <div className="text-center space-y-3 shadow-lg py-5 rounded-lg bg-white">

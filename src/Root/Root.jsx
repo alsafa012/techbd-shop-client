@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from "react";
+import React, { createContext, useEffect, useState } from "react";
 import { Outlet } from "react-router-dom";
 import Navbar from "../Components/HeaderSection/Navbar/Navbar";
-
+export const theamToggleContext = createContext();
 const Root = () => {
      const [theme, setTheme] = useState(null);
      // const [theme, setTheme] = useState("light");
@@ -25,7 +25,9 @@ const Root = () => {
                <div className="container mx-auto">
                     <Navbar handleDark={handleDark}></Navbar>
                </div>
-               <Outlet></Outlet>
+               <theamToggleContext.Provider value={theme}>
+                    <Outlet></Outlet>
+               </theamToggleContext.Provider>
           </div>
      );
 };

@@ -10,7 +10,7 @@ const AboutUs = () => {
                     </h1>
                     {/* <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-2 text-center my-10"></div> */}
                     <div className="container mx-auto mb-10">
-                         <div>
+                         <div className="">
                               <h2 className="text-2xl font-medium text-center underline">
                                    Welcome to RJ Tech Bd, Where Innovation Meets
                                    Excellence!

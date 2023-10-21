@@ -17,7 +17,7 @@ const Navbar = ({ handleDark }) => {
                .then(() => {
                     Swal.fire(
                          "Good job!",
-                         "User Signed successfully",
+                         "User Sign out successfully",
                          "success"
                     );
                     navigate("/");
@@ -179,7 +179,7 @@ const Navbar = ({ handleDark }) => {
                               </ul>
                          </div>
 
-                         <div className="navbar-end">
+                         <div className="navbar-end ">
                               {/* 000000000000000000000000000000000 */}
                               <div onClick={handleToggle} className="mr-2">
                                    {toggle ? (

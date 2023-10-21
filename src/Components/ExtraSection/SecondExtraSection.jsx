@@ -1,23 +1,41 @@
-import React from "react";
+import React, { useContext } from "react";
+import { theamToggleContext } from "../../Root/Root";
 // import { CiLocationOn } from "react-icons/ci";
 // import { PiPhoneDuotone } from "react-icons/pi";
 // import { AiOutlineFieldTime } from "react-icons/ai";
 // import { GoIssueReopened } from "react-icons/go";
 const SecondExtraSection = () => {
+     const theam = useContext(theamToggleContext);
      return (
           <div>
                <div className="container mx-auto my-10 ">
                     <div className="text-center space-y-3 mb-8">
+                         {/* <h3
+                              className={
+                                   theam === "light"
+                                        ? " text-2xl md:text-3xl lg:text-5xl font-bold text-blue-700"
+                                        : " text-2xl md:text-3xl lg:text-5xl font-bold text-white"
+                              }
+                         >
+                              Reviews
+                         </h3>
+                         <h2 className={theam ==='light' ? "text-2xl text-blue-400 text-center underline md:text-4xl font-bold py-8" : "text-2xl text-center md:text-4xl text-white font-bold py-8" }>
+                         Choose Your Brand
+                    </h2> */}
                          <h3 className=" text-2xl md:text-3xl lg:text-5xl font-bold text-blue-700">
                               Reviews
                          </h3>
-                         <p className="font-light text-blue-700">HAPPY CLIENTS ABOUT US</p>
+                         
+                         <p className="font-light text-blue-700">
+                              HAPPY CLIENTS ABOUT US
+                         </p>
                     </div>
                     <div className="grid grid-cols-1 md:grid-cols-2 w-[70%] mx-auto text-center gap-5">
-                              {/* 1st */}
+                         {/* 1st */}
                          <div className="shadow-2xl p-5 rounded-xl bg-white">
                               <p className=" font-semibold">
-                                   I used there products and true to say its amazing.Keep it up..!
+                                   I used there products and true to say its
+                                   amazing.Keep it up..!
                               </p>
                               <div className="space-y-2 mt-5 font-semibold">
                                    <img
@@ -59,7 +77,9 @@ const SecondExtraSection = () => {
                          {/* 2nd */}
                          <div className="shadow-2xl p-5 rounded-xl  bg-white">
                               <p>
-                              I bought Apple 13 Pro Max from here.There service are good and true to say its amazing.Keep it up..!
+                                   I bought Apple 13 Pro Max from here.There
+                                   service are good and true to say its
+                                   amazing.Keep it up..!
                               </p>
                               <div className="space-y-2 mt-5">
                                    <img
@@ -101,7 +121,8 @@ const SecondExtraSection = () => {
                          {/* 3rd */}
                          <div className="shadow-2xl p-5 rounded-xl bg-white">
                               <p>
-                              I bought Samsung s23 Ultra from here.There product are very authentic.Keep it up..!
+                                   I bought Samsung s23 Ultra from here.There
+                                   product are very authentic.Keep it up..!
                               </p>
                               <div className="space-y-2 mt-5">
                                    <img
@@ -143,7 +164,9 @@ const SecondExtraSection = () => {
                          {/* 4th */}
                          <div className="shadow-2xl p-5 rounded-xl bg-white">
                               <p>
-                              I bought Samsung s21 FE from here.There product are very authentic and also there service is best.
+                                   I bought Samsung s21 FE from here.There
+                                   product are very authentic and also there
+                                   service is best.
                               </p>
                               <div className="space-y-2 mt-5">
                                    <img

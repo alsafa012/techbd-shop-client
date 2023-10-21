@@ -27,17 +27,6 @@ const myCreatedRouter = createBrowserRouter([
                     loader: () => fetch("/brand.json"),
                },
                {
-                    path: "/register",
-                    element: <Register></Register>,
-               },
-               {
-                    path: "/myCart",
-                    element: <MyCart></MyCart>,
-                    loader: () =>
-                         fetch(" https://techbd-server.vercel.app/addCart"),
-               },
-
-               {
                     path: "/data/:brandName",
                     element: (
                          <PrivateRoute>
@@ -45,7 +34,7 @@ const myCreatedRouter = createBrowserRouter([
                          </PrivateRoute>
                     ),
                     loader: () =>
-                         fetch(" https://techbd-server.vercel.app/products"),
+                    fetch(" https://techbd-server.vercel.app/products"),
                },
                {
                     path: "/details/:id",
@@ -55,7 +44,14 @@ const myCreatedRouter = createBrowserRouter([
                               ` https://techbd-server.vercel.app/products/${params.id}`
                          ),
                },
-
+               {
+                    path: "/updateProduct/:id",
+                    element: <UpdateProduct></UpdateProduct>,
+                    loader: ({ params }) =>
+                         fetch(
+                              ` https://techbd-server.vercel.app/products/${params.id}`
+                         ),
+               },
                {
                     path: "/addProduct",
                     element: (
@@ -64,6 +60,18 @@ const myCreatedRouter = createBrowserRouter([
                          </PrivateRoute>
                     ),
                },
+               {
+                    path: "/myCart",
+                    element: <MyCart></MyCart>,
+                    loader: () =>
+                         fetch(" https://techbd-server.vercel.app/addCart"),
+               },
+               {
+                    path: "/register",
+                    element: <Register></Register>,
+               },
+
+
                {
                     path: "/login",
                     element: <Login></Login>,
@@ -75,14 +83,6 @@ const myCreatedRouter = createBrowserRouter([
                {
                     path: "/about",
                     element: <AboutUs></AboutUs>,
-               },
-               {
-                    path: "/updateProduct/:id",
-                    element: <UpdateProduct></UpdateProduct>,
-                    loader: ({ params }) =>
-                         fetch(
-                              ` https://techbd-server.vercel.app/products/${params.id}`
-                         ),
                },
           ],
      },
