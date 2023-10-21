@@ -1,11 +1,17 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { Link, NavLink, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../../Provider/AuthProvider";
 import Swal from "sweetalert2";
+import { TbSunHigh } from "react-icons/tb";
+import { MdDarkMode } from "react-icons/md";
 
-const Navbar = ({handleDark}) => {
+const Navbar = ({ handleDark }) => {
      const { user, userSignOut } = useContext(AuthContext);
-     const navigate = useNavigate()
+     const [toggle, setToggle] = useState(false);
+     const handleToggle = () => {
+          setToggle(!toggle);
+     };
+     const navigate = useNavigate();
      const handleSignOut = () => {
           userSignOut()
                .then(() => {
@@ -14,7 +20,7 @@ const Navbar = ({handleDark}) => {
                          "User Signed successfully",
                          "success"
                     );
-                    navigate("/")
+                    navigate("/");
                })
                .catch();
      };
@@ -123,7 +129,6 @@ const Navbar = ({handleDark}) => {
                          About us
                     </NavLink>
                </li>
-               <button onClick={handleDark} className="btn">x</button>
           </>
      );
      return (
@@ -131,7 +136,7 @@ const Navbar = ({handleDark}) => {
                <div>
                     <div className=" navbar bg-base-100 bg-gradient-to-r from-blue-900 to-blue-900">
                          <div className="navbar-start">
-                              <div className="dropdown ">
+                              <div className="dropdown">
                                    <label
                                         tabIndex={0}
                                         className="btn btn-ghost lg:hidden"
@@ -175,6 +180,25 @@ const Navbar = ({handleDark}) => {
                          </div>
 
                          <div className="navbar-end">
+                              {/* 000000000000000000000000000000000 */}
+                              <div onClick={handleToggle} className="mr-2">
+                                   {toggle ? (
+                                        <button
+                                             onClick={handleDark}
+                                             className="text-3xl"
+                                        >
+                                             <MdDarkMode></MdDarkMode>
+                                        </button>
+                                   ) : (
+                                        <button
+                                             className="text-3xl text-white"
+                                             onClick={handleDark}
+                                        >
+                                             <TbSunHigh></TbSunHigh>
+                                        </button>
+                                   )}
+                              </div>
+                              {/* 00000000000000000000000000 */}
                               <div className="dropdown dropdown-end">
                                    <label
                                         tabIndex={0}

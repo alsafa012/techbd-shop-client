@@ -1,21 +1,21 @@
 import React from "react";
-import { CiLocationOn } from "react-icons/ci";
-import { PiPhoneDuotone } from "react-icons/pi";
-import { AiOutlineFieldTime } from "react-icons/ai";
-import { GoIssueReopened } from "react-icons/go";
+// import { CiLocationOn } from "react-icons/ci";
+// import { PiPhoneDuotone } from "react-icons/pi";
+// import { AiOutlineFieldTime } from "react-icons/ai";
+// import { GoIssueReopened } from "react-icons/go";
 const SecondExtraSection = () => {
      return (
           <div>
-               <div className="container mx-auto my-10">
+               <div className="container mx-auto my-10 ">
                     <div className="text-center space-y-3 mb-8">
-                         <h3 className=" text-2xl md:text-3xl lg:text-5xl font-bold text-[]">
+                         <h3 className=" text-2xl md:text-3xl lg:text-5xl font-bold text-blue-700">
                               Reviews
                          </h3>
-                         <p className="font-light">HAPPY CLIENTS ABOUT US</p>
+                         <p className="font-light text-blue-700">HAPPY CLIENTS ABOUT US</p>
                     </div>
                     <div className="grid grid-cols-1 md:grid-cols-2 w-[70%] mx-auto text-center gap-5">
                               {/* 1st */}
-                         <div className="shadow-2xl p-5 rounded-xl">
+                         <div className="shadow-2xl p-5 rounded-xl bg-white">
                               <p className=" font-semibold">
                                    I used there products and true to say its amazing.Keep it up..!
                               </p>
@@ -57,7 +57,7 @@ const SecondExtraSection = () => {
                               </div>
                          </div>
                          {/* 2nd */}
-                         <div className="shadow-2xl p-5 rounded-xl font-semibold">
+                         <div className="shadow-2xl p-5 rounded-xl  bg-white">
                               <p>
                               I bought Apple 13 Pro Max from here.There service are good and true to say its amazing.Keep it up..!
                               </p>
@@ -99,7 +99,7 @@ const SecondExtraSection = () => {
                               </div>
                          </div>
                          {/* 3rd */}
-                         <div className="shadow-2xl p-5 rounded-xl">
+                         <div className="shadow-2xl p-5 rounded-xl bg-white">
                               <p>
                               I bought Samsung s23 Ultra from here.There product are very authentic.Keep it up..!
                               </p>
@@ -141,7 +141,7 @@ const SecondExtraSection = () => {
                               </div>
                          </div>
                          {/* 4th */}
-                         <div className="shadow-2xl p-5 rounded-xl">
+                         <div className="shadow-2xl p-5 rounded-xl bg-white">
                               <p>
                               I bought Samsung s21 FE from here.There product are very authentic and also there service is best.
                               </p>
