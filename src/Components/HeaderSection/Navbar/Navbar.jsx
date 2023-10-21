@@ -3,7 +3,7 @@ import { Link, NavLink, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../../Provider/AuthProvider";
 import Swal from "sweetalert2";
 
-const Navbar = () => {
+const Navbar = ({handleDark}) => {
      const { user, userSignOut } = useContext(AuthContext);
      const navigate = useNavigate()
      const handleSignOut = () => {
@@ -123,6 +123,7 @@ const Navbar = () => {
                          About us
                     </NavLink>
                </li>
+               <button onClick={handleDark} className="btn">x</button>
           </>
      );
      return (

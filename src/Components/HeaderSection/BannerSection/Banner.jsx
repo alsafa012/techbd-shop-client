@@ -21,6 +21,7 @@ const Banner = () => {
                               </p>
                               <p>Shop Smart, Shop Tech with RJ Tech BD.</p>
                               
+                              
                          </div>
                     </div>
                </div>

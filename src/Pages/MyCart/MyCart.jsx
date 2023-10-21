@@ -1,31 +1,33 @@
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { useLoaderData } from "react-router-dom";
 import ShowMyCart from "./ShowMyCart";
-// import { AuthContext } from "../../Provider/AuthProvider";
+import { AuthContext } from "../../Provider/AuthProvider";
 
 const MyCart = () => {
-     // const {user} = useContext(AuthContext);
+     const { user } = useContext(AuthContext);
      const productData = useLoaderData();
-     const [addProduct , setAddProduct]=useState(productData);
-          //  const User = user.email;
-          // const cartProduct = addProduct.find(item=> item.currentUser !== User )
-          // setAddProduct(cartProduct);
-     // useEffect(()=>{
-     //      const User = user.email;
-     //      const cartProduct = addProduct.filter(item=> item.currentUser === User )
-     //      setAddProduct(cartProduct);
-          
-     // } ,[]);
+     const [addProduct, setAddProduct] = useState([]);
 
-     console.log(addProduct);
+     const myUser = user?.email;
+     useEffect(() => {
+          if (myUser) {
+               const cartProduct = productData.filter(
+                    (item) => item.currentUser === myUser
+               );
+               setAddProduct(cartProduct);
+          }
+     }, [myUser,productData]);
+
+     // console.log(productData, myUser);
+     // console.log(addProduct);
 
      return (
           <div className="container mx-auto">
                <div className="grid md:grid-cols-2 gap-5">
                     {addProduct.map((product) => (
                          <ShowMyCart
-                         addProduct={addProduct}
-                         setAddProduct={setAddProduct}
+                              addProduct={addProduct}
+                              setAddProduct={setAddProduct}
                               key={product._id}
                               product={product}
                          ></ShowMyCart>

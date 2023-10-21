@@ -32,17 +32,17 @@ const AuthProvider = ({ children }) => {
           return signInWithEmailAndPassword(auth, email, password);
      };
      // User Profile updates
-     const updateUserProfile=(name,photo)=>{
-          return updateProfile(auth.currentUser,{
-               displayName:name,
-               photoURL:photo,
-          })
-     }
+     const updateUserProfile = (name, photo) => {
+          return updateProfile(auth.currentUser, {
+               displayName: name,
+               photoURL: photo,
+          });
+     };
      // sign out user
-     const userSignOut =()=>{
-          setLoader(true)
+     const userSignOut = () => {
+          setLoader(true);
           return signOut(auth);
-     }
+     };
 
      //
      useEffect(() => {
