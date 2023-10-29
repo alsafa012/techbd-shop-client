@@ -4,11 +4,11 @@ import Footer from "../../Components/Footer/Footer";
 import FirstExtraSection from "../../Components/ExtraSection/FirstExtraSection";
 import SecondExtraSection from "../../Components/ExtraSection/SecondExtraSection";
 
-const HomePage = ({ theme }) => {
+const HomePage = () => {
      return (
           <div>
                <Banner></Banner>
-               <BrandCards theme={theme}></BrandCards>
+               <BrandCards></BrandCards>
                <FirstExtraSection></FirstExtraSection>
                <SecondExtraSection></SecondExtraSection>
                <Footer></Footer>

@@ -4,13 +4,15 @@ import { AuthContext } from "../../../Provider/AuthProvider";
 import Swal from "sweetalert2";
 import { TbSunHigh } from "react-icons/tb";
 import { MdDarkMode } from "react-icons/md";
+import { useTheme } from "../../../DarkModeHook/DarkModeHook";
 
-const Navbar = ({ handleDark }) => {
+const Navbar = () => {
+     const { handleDark, mode } = useTheme();
      const { user, userSignOut } = useContext(AuthContext);
-     const [toggle, setToggle] = useState(false);
-     const handleToggle = () => {
-          setToggle(!toggle);
-     };
+     // const [toggle, setToggle] = useState(false);
+     // const handleToggle = () => {
+     //      setToggle(!toggle);
+     // };
      const navigate = useNavigate();
      const handleSignOut = () => {
           userSignOut()
@@ -180,21 +182,24 @@ const Navbar = ({ handleDark }) => {
                          </div>
 
                          <div className="navbar-end ">
+                              {/* <button onClick={handleDark} className="btn">
+                                   {mode === "light" ? "light" : "dark"}
+                              </button> */}
                               {/* 000000000000000000000000000000000 */}
-                              <div onClick={handleToggle} className="mr-2">
-                                   {toggle ? (
-                                        <button
-                                             onClick={handleDark}
-                                             className="text-3xl"
-                                        >
-                                             <MdDarkMode></MdDarkMode>
-                                        </button>
-                                   ) : (
+                              <div className="mr-2">
+                                   {mode === "light" ? (
                                         <button
                                              className="text-3xl text-white"
                                              onClick={handleDark}
                                         >
                                              <TbSunHigh></TbSunHigh>
+                                        </button>
+                                   ) : (
+                                        <button
+                                             onClick={handleDark}
+                                             className="text-3xl"
+                                        >
+                                             <MdDarkMode></MdDarkMode>
                                         </button>
                                    )}
                               </div>

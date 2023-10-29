@@ -1,11 +1,8 @@
-import React, { useContext } from "react";
-import { theamToggleContext } from "../../Root/Root";
 // import { CiLocationOn } from "react-icons/ci";
 // import { PiPhoneDuotone } from "react-icons/pi";
 // import { AiOutlineFieldTime } from "react-icons/ai";
 // import { GoIssueReopened } from "react-icons/go";
 const SecondExtraSection = () => {
-     const theam = useContext(theamToggleContext);
      return (
           <div>
                <div className="container mx-auto my-10 ">
@@ -25,7 +22,7 @@ const SecondExtraSection = () => {
                          <h3 className=" text-2xl md:text-3xl lg:text-5xl font-bold text-blue-700">
                               Reviews
                          </h3>
-                         
+
                          <p className="font-light text-blue-700">
                               HAPPY CLIENTS ABOUT US
                          </p>

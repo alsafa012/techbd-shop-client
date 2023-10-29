@@ -9,8 +9,8 @@ const FirstExtraSection = () => {
           <div className='container mx-auto'>
           <div className="my-5 md:my-14 ">
           <div className=''>
-               <h2 className=" text-center text-2xl md:text-3xl font-bold pb-5">
-                   <span className='text-blue-400'>Hello! </span> Buy Your Future Tech From Us..
+               <h2 className=" text-center text-2xl md:text-3xl font-bold text-blue-400 pb-5">Hello!
+                   <span className='text-black dark:text-white'> Buy Your Future Tech From Us..</span>
                </h2>
                {/* <p className="bg-red-50 w-[50%] mx-auto text-center my-5 text-sm font-light">
                     
