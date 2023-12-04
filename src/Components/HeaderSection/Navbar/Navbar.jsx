@@ -203,6 +203,13 @@ const Navbar = () => {
                                         </button>
                                    )}
                               </div>
+                              <input
+                                   type="checkbox"
+                                   className="toggle"
+                                   onClick={handleDark}
+                                   checked={mode === "light" ? false : true}
+                              />
+                            
                               {/* 00000000000000000000000000 */}
                               <div className="dropdown dropdown-end">
                                    <label

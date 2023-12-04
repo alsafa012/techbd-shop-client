@@ -4,7 +4,7 @@ import ShowBrandCards from "./ShowBrandCards";
 
 const BrandDetails = () => {
      const [brandData, setBrandData] = useState([]);
-     // console.log(brandData);
+     console.log( 'all brans',brandData);
      const products = useLoaderData();
      // console.log(products)
      const { brandName } = useParams();
@@ -13,7 +13,7 @@ const BrandDetails = () => {
                (item) => item.brandName === brandName
           );
           setBrandData(remainingData);
-          // console.log(remainingData)
+          console.log('remaining', remainingData)
      }, [brandName, products]);
      return (
           <div className="container mx-auto mb-16">
@@ -125,7 +125,7 @@ const BrandDetails = () => {
                               </div>
                          </div>
                          {/*  */}
-                         <div className="grid md:grid-cols-2 gap-4">
+                         <div className="grid md:grid-cols-2 gap-4 ">
                               {brandData.map((brand) => (
                                    <ShowBrandCards
                                         key={brand._id}

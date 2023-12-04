@@ -1,10 +1,13 @@
 import React from "react";
+import { useLoaderData } from "react-router-dom";
 import Swal from "sweetalert2";
 
 const AddProduct = () => {
+     const BrandLists = useLoaderData();
+     console.log(BrandLists);
      const handleAddProduct = (e) => {
           e.preventDefault();
-          
+
           const form = e.target;
           const image = form.image.value;
           const productName = form.productName.value;
@@ -33,7 +36,7 @@ const AddProduct = () => {
           })
                .then((res) => res.json())
                .then((data) => {
-                    if(data.acknowledged){
+                    if (data.acknowledged) {
                          Swal.fire(
                               "Good job!",
                               "Product added successfully",
@@ -48,7 +51,9 @@ const AddProduct = () => {
      return (
           <div className=" bg-gradient-to-r from-blue-700 to-blue-400 min-h-screen container mx-auto">
                <div className="container mx-auto">
-                    <h3 className="text-white text-center pt-5 text-2xl md:text-3xl font-bold">Add Product</h3>
+                    <h3 className="text-white text-center pt-5 text-2xl md:text-3xl font-bold">
+                         Add Product
+                    </h3>
                     <form onSubmit={handleAddProduct} className="mx-5">
                          {/* form 4th row */}
                          {/* <div className=""> */}
@@ -91,14 +96,30 @@ const AddProduct = () => {
                                              Brand Name
                                         </span>
                                    </label>
-                                   <label className="input-group">
-                                        <input
+                                   {/* <label className="input-group"> */}
+                                        <select
+                                             name="brandName"
+                                             id=""
+                                             className="input w-full input-bordered"
+                                        >
+                                             {BrandLists.map((brand) => (
+                                                  //     console.log(brand.brandName)
+                                                  <option
+                                                       key={brand._id}
+                                                       value={brand.brandName}
+                                                       name="brandName"
+                                                  >
+                                                       {brand.brandName}
+                                                  </option>
+                                             ))}
+                                        </select>
+                                        {/* <input
                                              type="text"
                                              name="brandName"
                                              placeholder="Brand Name"
                                              className="input w-full input-bordered"
-                                        />
-                                   </label>
+                                        /> */}
+                                   {/* </label> */}
                               </div>
                          </div>
                          {/* form 2nd row */}

@@ -9,6 +9,7 @@ const Login = () => {
      const { user, googleSignIn, userSignIn } = useContext(AuthContext);
      const [errorMessage, setErrorMessage] = useState(false);
      const location = useLocation();
+     console.log(location);
      const navigate = useNavigate();
 
      // sign in using google account

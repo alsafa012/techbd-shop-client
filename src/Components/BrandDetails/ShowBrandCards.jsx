@@ -1,10 +1,12 @@
 import React, { useState } from "react";
 // import { AiOutlineStar } from "react-icons/ai";
 import Rating from "react-rating";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 // import Rating from "react-rating";
 // const ShowBrandCards = ({brandData}) => {
 const ShowBrandCards = ({ brand }) => {
+     const lacation = useLocation()
+
      // const [shortData,setShortData]=useState(40)
      const {
           _id,
@@ -82,7 +84,7 @@ const ShowBrandCards = ({ brand }) => {
                                              Details
                                         </button>
                                    </Link>
-                                   <Link to={`/updateProduct/${_id}`}>
+                                   <Link state={location.pathname} to={`/updateProduct/${_id}`}>
                                         <button className="btn ml-5 text-white bg-gradient-to-r from-blue-700 to-blue-900">
                                              Update Here
                                         </button>

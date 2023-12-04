@@ -59,6 +59,7 @@ const myCreatedRouter = createBrowserRouter([
                               <AddProduct></AddProduct>
                          </PrivateRoute>
                     ),
+                    loader:()=>fetch("/brand.json")
                },
                {
                     path: "/myCart",

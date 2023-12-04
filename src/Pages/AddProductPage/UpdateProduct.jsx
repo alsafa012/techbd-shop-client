@@ -1,8 +1,13 @@
 import React from "react";
-import { useLoaderData } from "react-router-dom";
+import { useLoaderData, useLocation, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 
 const UpdateProduct = () => {
+     const location = useLocation()
+     console.log(location);
+     const navigate = useNavigate();
+     const from = location.state || '/'
+     console.log(from);
      const product = useLoaderData();
      const {
           _id,
@@ -52,16 +57,19 @@ const UpdateProduct = () => {
                          },
                          body: JSON.stringify(allData),
                     })
-                    .then((res) => res.json())
-                    .then((data) => {
-                         console.log(data);
-                         if (data.modifiedCount > 0) {
-                              Swal.fire({
-                                   icon: "success",
-                                   text: "Inserted successfully!",
-                              });
-                         }
-                    });
+                         .then((res) => res.json())
+                         .then((data) => {
+                              console.log(data);
+                              if (data.modifiedCount > 0) {
+                                   Swal.fire({
+                                        icon: "success",
+                                        text: "Inserted successfully!",
+                                   });
+                              }
+                              navigate(from, {replace:true});
+                              // navigate('/');
+                         });
+                         // navigate(location.state && location.state);
                }
           });
 
