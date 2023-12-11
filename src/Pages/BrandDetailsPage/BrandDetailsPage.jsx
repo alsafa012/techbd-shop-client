@@ -68,7 +68,8 @@ const BrandDetailsPage = () => {
                          );
                     }
                     navigate(location.pathname && location.pathname);
-                    console.log(data);
+                    // navigate(location.pathname && location.pathname);
+                    // console.log(data);
                });
      };
 
