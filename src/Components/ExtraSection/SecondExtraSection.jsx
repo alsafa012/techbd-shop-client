@@ -19,11 +19,11 @@ const SecondExtraSection = () => {
                          <h2 className={theam ==='light' ? "text-2xl text-blue-400 text-center underline md:text-4xl font-bold py-8" : "text-2xl text-center md:text-4xl text-white font-bold py-8" }>
                          Choose Your Brand
                     </h2> */}
-                         <h3 className=" text-2xl md:text-3xl lg:text-5xl font-bold text-blue-700">
+                         <h3 className=" text-2xl md:text-3xl lg:text-5xl font-bold text-blue-400">
                               Reviews
                          </h3>
 
-                         <p className="font-light text-blue-700">
+                         <p className="font-light text-blue-400">
                               HAPPY CLIENTS ABOUT US
                          </p>
                     </div>

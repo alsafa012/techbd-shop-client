@@ -3,9 +3,8 @@ import Navbar from "../Components/HeaderSection/Navbar/Navbar";
 const Root = () => {
      return (
           <div className="bg-white dark:bg-black">
-               <div className="container mx-auto">
-                    <Navbar></Navbar>
-               </div>
+               <Navbar></Navbar>
+
                <Outlet></Outlet>
           </div>
      );

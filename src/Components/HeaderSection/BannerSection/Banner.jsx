@@ -6,7 +6,7 @@ const Banner = () => {
           AOS.init();
      }, []);
      return (
-          <div className="container mx-auto">
+          <div className="">
                <div
                     className="hero h-[100vh]"
                     style={{
