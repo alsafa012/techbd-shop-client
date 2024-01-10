@@ -31,13 +31,13 @@ const Navbar = () => {
                <li>
                     <NavLink
                          to="/"
-                         className={({ isActive, isPending }) =>
-                              isPending
-                                   ? "pending"
-                                   : isActive
-                                   ? "text-[#ff6900] underline"
-                                   : ""
-                         }
+                         // className={({ isActive, isPending }) =>
+                         //      isPending
+                         //           ? "pending"
+                         //           : isActive
+                         //           ? "text-[#ff6900] underline"
+                         //           : ""
+                         // }
                     >
                          Home
                     </NavLink>
@@ -45,13 +45,13 @@ const Navbar = () => {
                <li>
                     <NavLink
                          to="/addProduct"
-                         className={({ isActive, isPending }) =>
-                              isPending
-                                   ? "pending"
-                                   : isActive
-                                   ? "text-[#ff6900] underline"
-                                   : ""
-                         }
+                         // className={({ isActive, isPending }) =>
+                         //      isPending
+                         //           ? "pending"
+                         //           : isActive
+                         //           ? "text-[#ff6900] underline"
+                         //           : ""
+                         // }
                     >
                          Add Product
                     </NavLink>
@@ -61,13 +61,13 @@ const Navbar = () => {
                     <li>
                          <NavLink
                               to="/myCart"
-                              className={({ isActive, isPending }) =>
-                                   isPending
-                                        ? "pending"
-                                        : isActive
-                                        ? "text-[#ff6900] underline"
-                                        : ""
-                              }
+                              // className={({ isActive, isPending }) =>
+                              //      isPending
+                              //           ? "pending"
+                              //           : isActive
+                              //           ? "text-[#ff6900] underline"
+                              //           : ""
+                              // }
                          >
                               My Cart
                          </NavLink>
@@ -76,13 +76,13 @@ const Navbar = () => {
                {/* <li>
                     <NavLink
                          to="/register"
-                         className={({ isActive, isPending }) =>
-                              isPending
-                                   ? "pending"
-                                   : isActive
-                                   ? "text-[#ff6900] underline"
-                                   : ""
-                         }
+                         // className={({ isActive, isPending }) =>
+                         //      isPending
+                         //           ? "pending"
+                         //           : isActive
+                         //           ? "text-[#ff6900] underline"
+                         //           : ""
+                         // }
                     >
                          Register
                     </NavLink>
@@ -91,13 +91,13 @@ const Navbar = () => {
                     <li>
                          <NavLink
                               to="/login"
-                              className={({ isActive, isPending }) =>
-                                   isPending
-                                        ? "pending"
-                                        : isActive
-                                        ? "text-[#ff6900] underline"
-                                        : ""
-                              }
+                              // className={({ isActive, isPending }) =>
+                              //      isPending
+                              //           ? "pending"
+                              //           : isActive
+                              //           ? "text-[#ff6900] underline"
+                              //           : ""
+                              // }
                          >
                               Login
                          </NavLink>
@@ -106,13 +106,13 @@ const Navbar = () => {
                <li>
                     <NavLink
                          to="/contact"
-                         className={({ isActive, isPending }) =>
-                              isPending
-                                   ? "pending"
-                                   : isActive
-                                   ? "text-[#ff6900] underline"
-                                   : ""
-                         }
+                         // className={({ isActive, isPending }) =>
+                         //      isPending
+                         //           ? "pending"
+                         //           : isActive
+                         //           ? "text-[#ff6900] underline"
+                         //           : ""
+                         // }
                     >
                          Contact Us
                     </NavLink>
@@ -120,13 +120,13 @@ const Navbar = () => {
                <li>
                     <NavLink
                          to="/about"
-                         className={({ isActive, isPending }) =>
-                              isPending
-                                   ? "pending"
-                                   : isActive
-                                   ? "text-[#ff6900] underline"
-                                   : ""
-                         }
+                         // className={({ isActive, isPending }) =>
+                         //      isPending
+                         //           ? "pending"
+                         //           : isActive
+                         //           ? "text-[#ff6900] underline"
+                         //           : ""
+                         // }
                     >
                          About us
                     </NavLink>

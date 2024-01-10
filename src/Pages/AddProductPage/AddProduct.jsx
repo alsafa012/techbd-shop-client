@@ -49,7 +49,7 @@ const AddProduct = () => {
           form.reset();
      };
      return (
-          <div className=" bg-gradient-to-r from-blue-700 to-blue-400 min-h-screen container mx-auto">
+          <div className="bg-gradient-to-r from-blue-700 to-blue-400 min-h-screen">
                <div className="container mx-auto">
                     <h3 className="text-white text-center pt-5 text-2xl md:text-3xl font-bold">
                          Add Product
@@ -69,6 +69,8 @@ const AddProduct = () => {
                                         name="image"
                                         placeholder="Image Url"
                                         className="input input-bordered w-full"
+                                        required
+                                        required
                                    />
                               </label>
                          </div>
@@ -86,7 +88,8 @@ const AddProduct = () => {
                                              type="text"
                                              name="productName"
                                              placeholder="Product Name"
-                                             className=" input input-bordered w-full"
+                                             className="input input-bordered w-full"
+                                             required
                                         />
                                    </label>
                               </div>
@@ -97,23 +100,23 @@ const AddProduct = () => {
                                         </span>
                                    </label>
                                    {/* <label className="input-group"> */}
-                                        <select
-                                             name="brandName"
-                                             id=""
-                                             className="input w-full input-bordered"
-                                        >
-                                             {BrandLists.map((brand) => (
-                                                  //     console.log(brand.brandName)
-                                                  <option
-                                                       key={brand._id}
-                                                       value={brand.brandName}
-                                                       name="brandName"
-                                                  >
-                                                       {brand.brandName}
-                                                  </option>
-                                             ))}
-                                        </select>
-                                        {/* <input
+                                   <select
+                                        name="brandName"
+                                        id=""
+                                        className="input w-full input-bordered"
+                                   >
+                                        {BrandLists.map((brand) => (
+                                             //     console.log(brand.brandName)
+                                             <option
+                                                  key={brand._id}
+                                                  value={brand.brandName}
+                                                  name="brandName"
+                                             >
+                                                  {brand.brandName}
+                                             </option>
+                                        ))}
+                                   </select>
+                                   {/* <input
                                              type="text"
                                              name="brandName"
                                              placeholder="Brand Name"
@@ -136,6 +139,7 @@ const AddProduct = () => {
                                              name="productType"
                                              placeholder="productType"
                                              className="input input-bordered w-full"
+                                             required
                                         />
                                    </label>
                               </div>
@@ -151,6 +155,7 @@ const AddProduct = () => {
                                              name="productPrice"
                                              placeholder="Product Price"
                                              className="input w-full input-bordered"
+                                             required
                                         />
                                    </label>
                               </div>
@@ -169,6 +174,7 @@ const AddProduct = () => {
                                              name="ShortDescription"
                                              placeholder="Short description"
                                              className="input input-bordered w-full"
+                                             required
                                         />
                                    </label>
                               </div>
@@ -184,6 +190,7 @@ const AddProduct = () => {
                                              name="rating"
                                              placeholder="Rating"
                                              className="input w-full input-bordered"
+                                             required
                                         />
                                    </label>
                               </div>

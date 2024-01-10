@@ -17,7 +17,7 @@ const BrandCards = () => {
                          data-aos="flip-left"
                          data-aos-easing="ease-out-cubic"
                          data-aos-duration="2000"
-                         className="text-2xl p-4 text-blue-400 text-center underline md:text-4xl font-bold "
+                         className="text-2xl p-4 text-blue-400 text-center md:text-4xl font-bold my-10"
                     >
                          Choose Your Brand
                     </h2>

@@ -34,7 +34,7 @@ const myCreatedRouter = createBrowserRouter([
                          </PrivateRoute>
                     ),
                     loader: () =>
-                    fetch(" https://techbd-server.vercel.app/products"),
+                    fetch("https://techbd-server.vercel.app/products"),
                },
                {
                     path: "/details/:id",

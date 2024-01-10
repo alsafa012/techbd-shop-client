@@ -1,8 +1,15 @@
 // import { CiLocationOn } from "react-icons/ci";
 // import { PiPhoneDuotone } from "react-icons/pi";
 // import { AiOutlineFieldTime } from "react-icons/ai";
+
+import Aos from "aos";
+import { useEffect } from "react";
+
 // import { GoIssueReopened } from "react-icons/go";
 const SecondExtraSection = () => {
+     useEffect(()=>{
+          Aos.init();
+     },[])
      return (
           <div>
                <div className="container mx-auto my-10 ">
@@ -29,7 +36,10 @@ const SecondExtraSection = () => {
                     </div>
                     <div className="grid grid-cols-1 md:grid-cols-2 w-[70%] mx-auto text-center gap-5">
                          {/* 1st */}
-                         <div className="shadow-2xl p-5 rounded-xl bg-white">
+                         <div  data-aos="flip-left"
+               data-aos-offset="100"
+               data-aos-easing="ease-out-cubic"
+               data-aos-duration="2000" className="shadow-2xl p-5 rounded-xl bg-white">
                               <p className=" font-semibold">
                                    I used there products and true to say its
                                    amazing.Keep it up..!
@@ -72,7 +82,10 @@ const SecondExtraSection = () => {
                               </div>
                          </div>
                          {/* 2nd */}
-                         <div className="shadow-2xl p-5 rounded-xl  bg-white">
+                         <div  data-aos="flip-left"
+               data-aos-offset="100"
+               data-aos-easing="ease-out-cubic"
+               data-aos-duration="2000" className="shadow-2xl p-5 rounded-xl  bg-white">
                               <p>
                                    I bought Apple 13 Pro Max from here.There
                                    service are good and true to say its
@@ -116,7 +129,10 @@ const SecondExtraSection = () => {
                               </div>
                          </div>
                          {/* 3rd */}
-                         <div className="shadow-2xl p-5 rounded-xl bg-white">
+                         <div  data-aos="flip-left"
+               data-aos-offset="100"
+               data-aos-easing="ease-out-cubic"
+               data-aos-duration="2000" className="shadow-2xl p-5 rounded-xl bg-white">
                               <p>
                                    I bought Samsung s23 Ultra from here.There
                                    product are very authentic.Keep it up..!
@@ -159,7 +175,10 @@ const SecondExtraSection = () => {
                               </div>
                          </div>
                          {/* 4th */}
-                         <div className="shadow-2xl p-5 rounded-xl bg-white">
+                         <div  data-aos="flip-left"
+               data-aos-offset="100"
+               data-aos-easing="ease-out-cubic"
+               data-aos-duration="2000" className="shadow-2xl p-5 rounded-xl bg-white">
                               <p>
                                    I bought Samsung s21 FE from here.There
                                    product are very authentic and also there
