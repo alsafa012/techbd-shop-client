@@ -50,7 +50,7 @@ const UpdateProduct = () => {
                confirmButtonText: "Yes, delete it!",
           }).then((result) => {
                if (result.isConfirmed) {
-                    fetch(` http://localhost:5000/products/${_id}`, {
+                    fetch(` https://techbd-server.vercel.app/products/${_id}`, {
                          method: "PUT",
                          headers: {
                               "content-type": "application/json",
@@ -73,7 +73,7 @@ const UpdateProduct = () => {
                }
           });
 
-          // fetch(` http://localhost:5000/products/${_id}`, {
+          // fetch(` https://techbd-server.vercel.app/products/${_id}`, {
           //      method: "PUT",
           //      headers: {
           //           "content-type": "application/json",

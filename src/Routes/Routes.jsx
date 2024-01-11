@@ -34,19 +34,19 @@ const myCreatedRouter = createBrowserRouter([
                               <BrandDetails></BrandDetails>
                          </PrivateRoute>
                     ),
-                    loader: () => fetch("http://localhost:5000/products"),
+                    loader: () => fetch("https://techbd-server.vercel.app/products"),
                },
                {
                     path: "/details/:id",
                     element: <BrandDetailsPage></BrandDetailsPage>,
                     loader: ({ params }) =>
-                         fetch(`http://localhost:5000/products/${params.id}`),
+                         fetch(`https://techbd-server.vercel.app/products/${params.id}`),
                },
                {
                     path: "/updateProduct/:id",
                     element: <UpdateProduct></UpdateProduct>,
                     loader: ({ params }) =>
-                         fetch(`http://localhost:5000/products/${params.id}`),
+                         fetch(`https://techbd-server.vercel.app/products/${params.id}`),
                },
                {
                     path: "/myAddedProduct",
@@ -55,7 +55,7 @@ const myCreatedRouter = createBrowserRouter([
                               <MyAddedProduct></MyAddedProduct>
                          </PrivateRoute>
                     ),
-                    loader: () => fetch("http://localhost:5000/products"),
+                    loader: () => fetch("https://techbd-server.vercel.app/products"),
                },
                {
                     path: "/addProduct",
@@ -69,7 +69,7 @@ const myCreatedRouter = createBrowserRouter([
                {
                     path: "/myCart",
                     element: <MyCart></MyCart>,
-                    loader: () => fetch("http://localhost:5000/addCart"),
+                    loader: () => fetch("https://techbd-server.vercel.app/addCart"),
                },
                {
                     path: "/register",

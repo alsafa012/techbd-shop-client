@@ -33,7 +33,7 @@ const AddProduct = () => {
           };
           console.log(allData);
 
-          fetch(" http://localhost:5000/products", {
+          fetch(" https://techbd-server.vercel.app/products", {
                method: "POST",
                headers: {
                     "content-type": "application/json",
