@@ -1,11 +1,15 @@
-import React, { useState } from "react";
+import Aos from "aos";
+import React, { useEffect, useState } from "react";
 // import { AiOutlineStar } from "react-icons/ai";
 import Rating from "react-rating";
 import { Link, useLocation } from "react-router-dom";
 // import Rating from "react-rating";
 // const ShowBrandCards = ({brandData}) => {
 const ShowBrandCards = ({ brand }) => {
-     const lacation = useLocation()
+     const lacation = useLocation();
+     useEffect(()=>{
+          Aos.init();
+     },[])
 
      // const [shortData,setShortData]=useState(40)
      const {
@@ -21,7 +25,13 @@ const ShowBrandCards = ({ brand }) => {
      // console.log(brandData)
      return (
           <div>
-               <div className="py-5 px-3 lg:flex gap-5 bg-base-100 shadow-xl rounded-xl">
+               <div
+                    data-aos="fade-up"
+                    data-aos-offset="150"
+                    data-aos-easing="ease-in-cubic"
+                    data-aos-duration="2000"
+                    className="py-5 px-3 lg:flex gap-5 bg-base-100 shadow-xl rounded-xl"
+               >
                     <div className="w-[40%] lg:w-[30%] mx-auto mb-2">
                          <img className="object-fill" src={image} alt="item" />
                     </div>

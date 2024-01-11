@@ -2,7 +2,7 @@ import Rating from "react-rating";
 import { Link } from "react-router-dom";
 // import { MdDeleteForever } from "react-icons/md";
 // <MdDeleteForever />
-const ShowAddedProducts = ({ product,handleDeleteProduct }) => {
+const ShowAddedProducts = ({ product, handleDeleteProduct }) => {
      const {
           _id,
           productName,
@@ -15,7 +15,13 @@ const ShowAddedProducts = ({ product,handleDeleteProduct }) => {
      } = product;
      return (
           <div>
-               <div className="py-5 px-3 lg:flex gap-5 bg-base-100 shadow-xl rounded-xl">
+               <div
+                    data-aos="fade-up"
+                    data-aos-offset="150"
+                    data-aos-easing="ease-in-cubic"
+                    data-aos-duration="2000"
+                    className="py-5 px-3 lg:flex gap-5 bg-base-100 shadow-xl rounded-xl"
+               >
                     <div className="w-[40%] lg:w-[30%] mx-auto mb-2">
                          <img className=" object-fill" src={image} alt="item" />
                     </div>
@@ -73,7 +79,10 @@ const ShowAddedProducts = ({ product,handleDeleteProduct }) => {
                               </p>
                          )} */}
                               <div className="flex justify-center lg:justify-start items-center lg:items-start">
-                                   <button onClick={()=>handleDeleteProduct(_id)} className="btn text-white bg-gradient-to-r from-blue-700 to-blue-900">
+                                   <button
+                                        onClick={() => handleDeleteProduct(_id)}
+                                        className="btn text-white bg-gradient-to-r from-blue-700 to-blue-900"
+                                   >
                                         Delete
                                    </button>
 
