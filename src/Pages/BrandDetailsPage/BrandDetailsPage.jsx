@@ -51,7 +51,7 @@ const BrandDetailsPage = () => {
                productType,
                rating,
           };
-          fetch(" https://techbd-server.vercel.app/addCart", {
+          fetch(" http://localhost:5000/addCart", {
                method: "POST",
                headers: {
                     "content-type": "application/json",

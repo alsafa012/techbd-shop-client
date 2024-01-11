@@ -27,7 +27,7 @@ const ShowBrands = ({ brand }) => {
                     <div className="card bg-base-100 shadow-xl image-full">
                          {/* <figure> */}
                          <img
-                              className="h-[250px] w-full"
+                              className="h-[250px] w-full rounded-xl"
                               src={brand.brand_img}
                               alt="brands"
                          />

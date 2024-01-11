@@ -14,6 +14,7 @@ import PrivateRoute from "./PrivateRoute";
 import UpdateProduct from "../Pages/AddProductPage/UpdateProduct";
 import ContactUs from "../Pages/ContactUsPage/ContactUs";
 import AboutUs from "../Pages/AboutUsPage/AboutUs";
+import MyAddedProduct from "../Pages/MyAddedProduct/MyAddedProduct";
 
 const myCreatedRouter = createBrowserRouter([
      {
@@ -33,24 +34,28 @@ const myCreatedRouter = createBrowserRouter([
                               <BrandDetails></BrandDetails>
                          </PrivateRoute>
                     ),
-                    loader: () =>
-                    fetch("https://techbd-server.vercel.app/products"),
+                    loader: () => fetch("http://localhost:5000/products"),
                },
                {
                     path: "/details/:id",
                     element: <BrandDetailsPage></BrandDetailsPage>,
                     loader: ({ params }) =>
-                         fetch(
-                              ` https://techbd-server.vercel.app/products/${params.id}`
-                         ),
+                         fetch(`http://localhost:5000/products/${params.id}`),
                },
                {
                     path: "/updateProduct/:id",
                     element: <UpdateProduct></UpdateProduct>,
                     loader: ({ params }) =>
-                         fetch(
-                              ` https://techbd-server.vercel.app/products/${params.id}`
-                         ),
+                         fetch(`http://localhost:5000/products/${params.id}`),
+               },
+               {
+                    path: "/myAddedProduct",
+                    element: (
+                         <PrivateRoute>
+                              <MyAddedProduct></MyAddedProduct>
+                         </PrivateRoute>
+                    ),
+                    loader: () => fetch("http://localhost:5000/products"),
                },
                {
                     path: "/addProduct",
@@ -59,19 +64,17 @@ const myCreatedRouter = createBrowserRouter([
                               <AddProduct></AddProduct>
                          </PrivateRoute>
                     ),
-                    loader:()=>fetch("/brand.json")
+                    loader: () => fetch("/brand.json"),
                },
                {
                     path: "/myCart",
                     element: <MyCart></MyCart>,
-                    loader: () =>
-                         fetch(" https://techbd-server.vercel.app/addCart"),
+                    loader: () => fetch("http://localhost:5000/addCart"),
                },
                {
                     path: "/register",
                     element: <Register></Register>,
                },
-
 
                {
                     path: "/login",

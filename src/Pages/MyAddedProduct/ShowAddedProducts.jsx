@@ -1,41 +1,8 @@
-import React from "react";
 import Rating from "react-rating";
 import { Link } from "react-router-dom";
-import Swal from "sweetalert2";
-
-const ShowMyCart = ({ product, addProduct, setAddProduct }) => {
-     const handleRemoveProduct = (id) => {
-          Swal.fire({
-               title: "Are you sure?",
-               text: "You won't be able to revert this!",
-               icon: "warning",
-               showCancelButton: true,
-               confirmButtonColor: "#3085d6",
-               cancelButtonColor: "#d33",
-               confirmButtonText: "Yes, delete it!",
-          }).then((result) => {
-               if (result.isConfirmed) {
-                    fetch(` http://localhost:5000/addCart/${id}`, {
-                         method: "DELETE",
-                    })
-                         .then((res) => res.json())
-                         .then((data) => {
-                              console.log(data);
-                              if (data.deletedCount > 0) {
-                                   const remainingUser = addProduct.filter(
-                                        (item) => item._id !== id
-                                   );
-                                   setAddProduct(remainingUser);
-                                   Swal.fire(
-                                        "Deleted!",
-                                        "Product has been delete successfully",
-                                        "success"
-                                   );
-                              }
-                         });
-               }
-          });
-     };
+// import { MdDeleteForever } from "react-icons/md";
+// <MdDeleteForever />
+const ShowAddedProducts = ({ product,handleDeleteProduct }) => {
      const {
           _id,
           productName,
@@ -48,17 +15,13 @@ const ShowMyCart = ({ product, addProduct, setAddProduct }) => {
      } = product;
      return (
           <div>
-               <div className=" py-5 px-3 md:flex items-center gap-5 bg-base-100 shadow-xl rounded-xl">
-                    <div className="md:w-[30%]">
-                         <img
-                              className=" flex justify-center object-fill"
-                              src={image}
-                              alt="item"
-                         />
+               <div className=" py-5 px-3 lg:flex gap-5 bg-base-100 shadow-xl rounded-xl">
+                    <div className="w-[40%] lg:w-[30%]">
+                         <img className=" object-fill" src={image} alt="item" />
                     </div>
 
-                    <div className="md:w-[70%]">
-                         <div className="text-xl font-medium space-y-2">
+                    <div className="w-[60%] lg:w-[70%]">
+                         <div className="lg:text-xl font-medium space-y-2">
                               <p>Brand-Name: {brandName}</p>
                               <p>Device-Name: {productName}</p>
                               <p>Price: {productPrice} TK</p>
@@ -100,18 +63,29 @@ const ShowMyCart = ({ product, addProduct, setAddProduct }) => {
                                         readonly
                                    />
                               </p>
-                              {/* <p>
-                                   Description: {ShortDescription.slice(0, 80)}
-                              </p> */}
 
-                              <Link>
-                                   <button
-                                        onClick={() => handleRemoveProduct(_id)}
-                                        className="btn mt-3 text-white bg-gradient-to-r from-blue-700 to-blue-900"
-                                   >
-                                        Remove product
+                              {/* <p>Description: { ShortDescription.slice(0,80)}</p> */}
+                              {/* 
+                         {ShortDescription.length > 20 && (
+                              <p>
+                                   Description:{" "}
+                                   {ShortDescription.slice(0, 100)}.....
+                              </p>
+                         )} */}
+                              <div className="flex">
+                                   <button onClick={()=>handleDeleteProduct(_id)} className="btn text-white bg-gradient-to-r from-blue-700 to-blue-900">
+                                        Delete
                                    </button>
-                              </Link>
+
+                                   <Link
+                                        state={location.pathname}
+                                        to={`/updateProduct/${_id}`}
+                                   >
+                                        <button className="btn ml-5 text-white bg-gradient-to-r from-blue-700 to-blue-900">
+                                             Update Here
+                                        </button>
+                                   </Link>
+                              </div>
                          </div>
                     </div>
                </div>
@@ -119,4 +93,4 @@ const ShowMyCart = ({ product, addProduct, setAddProduct }) => {
      );
 };
 
-export default ShowMyCart;
+export default ShowAddedProducts;

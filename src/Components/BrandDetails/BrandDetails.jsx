@@ -125,7 +125,7 @@ const BrandDetails = () => {
                               </div>
                          </div>
                          {/*  */}
-                         <div className="grid md:grid-cols-2 gap-4 ">
+                         <div className="grid md:grid-cols-2 gap-4">
                               {brandData.map((brand) => (
                                    <ShowBrandCards
                                         key={brand._id}

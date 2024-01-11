@@ -1,10 +1,15 @@
-import React from "react";
-import { useLoaderData } from "react-router-dom";
+import { useContext } from "react";
+import { useLoaderData, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
+import { AuthContext } from "../../Provider/AuthProvider";
 
 const AddProduct = () => {
      const BrandLists = useLoaderData();
      console.log(BrandLists);
+     const { user } = useContext(AuthContext);
+     const addedBy = user?.email;
+     // console.log(email);
+     const navigate = useNavigate();
      const handleAddProduct = (e) => {
           e.preventDefault();
 
@@ -24,10 +29,11 @@ const AddProduct = () => {
                productPrice,
                ShortDescription,
                rating,
+               addedBy,
           };
           console.log(allData);
 
-          fetch(" https://techbd-server.vercel.app/products", {
+          fetch(" http://localhost:5000/products", {
                method: "POST",
                headers: {
                     "content-type": "application/json",
@@ -43,9 +49,9 @@ const AddProduct = () => {
                               "success"
                          );
                     }
+                    navigate("/myAddedProduct");
                     console.log(data);
                });
-
           form.reset();
      };
      return (
@@ -69,7 +75,6 @@ const AddProduct = () => {
                                         name="image"
                                         placeholder="Image Url"
                                         className="input input-bordered w-full"
-                                        required
                                         required
                                    />
                               </label>
@@ -195,13 +200,15 @@ const AddProduct = () => {
                                    </label>
                               </div>
                          </div>
-                         <div className="w-[50%] mx-auto">
+                         {/* <Link to="/myAddedProduct"> */}
+                         <div className="mx-auto">
                               <input
                                    className="btn mt-4 w-full bg-gradient-to-r from-blue-700 to-blue-900 border-none text-white"
                                    type="submit"
                                    value="Add Product"
                               />
                          </div>
+                         {/* </Link> */}
                     </form>
                </div>
           </div>

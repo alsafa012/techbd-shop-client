@@ -242,6 +242,13 @@ const Navbar = () => {
                                                        </a>
                                                   </li>
                                                   <li>
+                                                       <Link to="/myAddedProduct">
+                                                            <button className="font-medium">
+                                                                 My-Added-Product
+                                                            </button>
+                                                       </Link>
+                                                  </li>
+                                                  <li>
                                                        {user ? (
                                                             <button
                                                                  className="font-medium"

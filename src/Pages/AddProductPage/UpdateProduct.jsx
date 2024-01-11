@@ -3,10 +3,10 @@ import { useLoaderData, useLocation, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 
 const UpdateProduct = () => {
-     const location = useLocation()
+     const location = useLocation();
      console.log(location);
      const navigate = useNavigate();
-     const from = location.state || '/'
+     const from = location.state || "/";
      console.log(from);
      const product = useLoaderData();
      const {
@@ -50,7 +50,7 @@ const UpdateProduct = () => {
                confirmButtonText: "Yes, delete it!",
           }).then((result) => {
                if (result.isConfirmed) {
-                    fetch(` https://techbd-server.vercel.app/products/${_id}`, {
+                    fetch(` http://localhost:5000/products/${_id}`, {
                          method: "PUT",
                          headers: {
                               "content-type": "application/json",
@@ -66,14 +66,14 @@ const UpdateProduct = () => {
                                         text: "Inserted successfully!",
                                    });
                               }
-                              navigate(from, {replace:true});
+                              navigate(from, { replace: true });
                               // navigate('/');
                          });
-                         // navigate(location.state && location.state);
+                    // navigate(location.state && location.state);
                }
           });
 
-          // fetch(` https://techbd-server.vercel.app/products/${_id}`, {
+          // fetch(` http://localhost:5000/products/${_id}`, {
           //      method: "PUT",
           //      headers: {
           //           "content-type": "application/json",
@@ -95,8 +95,8 @@ const UpdateProduct = () => {
           // e.target.image.value=''
      };
      return (
-          <div>
-               <div className=" bg-gradient-to-r from-blue-700 to-blue-400 min-h-screen container mx-auto">
+          <div className="bg-gradient-to-r from-blue-700 to-blue-400">
+               <div className="bg-gradient-to-r from-blue-700 to-blue-400 min-h-screen container mx-auto">
                     <h2 className="text-center text-white pt-5 text-2xl md:text-4xl">
                          Update Product Info Here
                     </h2>
@@ -228,7 +228,7 @@ const UpdateProduct = () => {
                                         </label>
                                    </div>
                               </div>
-                              <div className="w-[50%] mx-auto">
+                              <div className="mx-auto">
                                    <input
                                         className="btn mt-4 w-full bg-gradient-to-r from-blue-700 to-blue-900 border-none text-white"
                                         type="submit"
