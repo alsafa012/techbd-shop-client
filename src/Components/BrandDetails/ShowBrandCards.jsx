@@ -21,12 +21,12 @@ const ShowBrandCards = ({ brand }) => {
      // console.log(brandData)
      return (
           <div>
-               <div className=" py-5 px-3 lg:flex gap-5 bg-base-100 shadow-xl rounded-xl">
-                    <div className="w-[40%] lg:w-[30%]">
-                         <img className=" object-fill" src={image} alt="item" />
+               <div className="py-5 px-3 lg:flex gap-5 bg-base-100 shadow-xl rounded-xl">
+                    <div className="w-[40%] lg:w-[30%] mx-auto mb-2">
+                         <img className="object-fill" src={image} alt="item" />
                     </div>
 
-                    <div className="w-[60%] lg:w-[70%]">
+                    <div className="w-full lg:w-[70%] text-center lg:text-left">
                          <div className="lg:text-xl font-medium space-y-2">
                               <p>Brand-Name: {brandName}</p>
                               <p>Device-Name: {productName}</p>
@@ -78,17 +78,17 @@ const ShowBrandCards = ({ brand }) => {
                                         {ShortDescription.slice(0, 100)}.....
                                    </p>
                               )}
-                              <div className="flex">
+                              <div className="">
                                    <Link to={`/details/${_id}`}>
-                                        <button className="btn text-white bg-gradient-to-r from-blue-700 to-blue-900">
+                                        <button className="btn text-white bg-gradient-to-r from-blue-700 to-blue-900 w-full">
                                              Details
                                         </button>
                                    </Link>
-                                   <Link state={location.pathname} to={`/updateProduct/${_id}`}>
+                                   {/* <Link state={location.pathname} to={`/updateProduct/${_id}`}>
                                         <button className="btn ml-5 text-white bg-gradient-to-r from-blue-700 to-blue-900">
                                              Update Here
                                         </button>
-                                   </Link>
+                                   </Link> */}
                               </div>
                          </div>
                     </div>

@@ -15,12 +15,12 @@ const ShowAddedProducts = ({ product,handleDeleteProduct }) => {
      } = product;
      return (
           <div>
-               <div className=" py-5 px-3 lg:flex gap-5 bg-base-100 shadow-xl rounded-xl">
-                    <div className="w-[40%] lg:w-[30%]">
+               <div className="py-5 px-3 lg:flex gap-5 bg-base-100 shadow-xl rounded-xl">
+                    <div className="w-[40%] lg:w-[30%] mx-auto mb-2">
                          <img className=" object-fill" src={image} alt="item" />
                     </div>
 
-                    <div className="w-[60%] lg:w-[70%]">
+                    <div className="w-full lg:w-[70%] text-center lg:text-left">
                          <div className="lg:text-xl font-medium space-y-2">
                               <p>Brand-Name: {brandName}</p>
                               <p>Device-Name: {productName}</p>
@@ -72,7 +72,7 @@ const ShowAddedProducts = ({ product,handleDeleteProduct }) => {
                                    {ShortDescription.slice(0, 100)}.....
                               </p>
                          )} */}
-                              <div className="flex">
+                              <div className="flex justify-center lg:justify-start items-center lg:items-start">
                                    <button onClick={()=>handleDeleteProduct(_id)} className="btn text-white bg-gradient-to-r from-blue-700 to-blue-900">
                                         Delete
                                    </button>
