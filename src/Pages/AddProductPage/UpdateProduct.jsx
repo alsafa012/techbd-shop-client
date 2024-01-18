@@ -1,6 +1,7 @@
 import React from "react";
 import { useLoaderData, useLocation, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
+import WebsiteTitle from "../../Components/WebsiteTitle/WebsiteTitle";
 
 const UpdateProduct = () => {
      const location = useLocation();
@@ -96,6 +97,8 @@ const UpdateProduct = () => {
      };
      return (
           <div className="bg-gradient-to-r from-blue-700 to-blue-400">
+               <WebsiteTitle title={"TechBD || Update Here"}></WebsiteTitle>
+
                <div className="bg-gradient-to-r from-blue-700 to-blue-400 min-h-screen container mx-auto">
                     <h2 className="text-center text-white pt-5 text-2xl md:text-4xl">
                          Update Product Info Here

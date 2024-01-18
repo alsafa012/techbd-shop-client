@@ -3,6 +3,7 @@ import { Link, useLoaderData } from "react-router-dom";
 import ShowMyCart from "./ShowMyCart";
 import { AuthContext } from "../../Provider/AuthProvider";
 import Footer from "../../Components/Footer/Footer";
+import WebsiteTitle from "../../Components/WebsiteTitle/WebsiteTitle";
 
 const MyCart = () => {
      const { user } = useContext(AuthContext);
@@ -22,6 +23,8 @@ const MyCart = () => {
 
      return (
           <div className="">
+               <WebsiteTitle title={"TechBD || My Carts"}></WebsiteTitle>
+
                <div className="container mx-auto min-h-[75vh]">
                     {addProduct.length === 0 ? (
                          <div className="text-center mx-auto text-xl md:text-3xl font-bold mt-20 space-y-2">

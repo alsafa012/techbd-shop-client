@@ -2,6 +2,7 @@ import { useContext } from "react";
 import { useLoaderData, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 import { AuthContext } from "../../Provider/AuthProvider";
+import WebsiteTitle from "../../Components/WebsiteTitle/WebsiteTitle";
 
 const AddProduct = () => {
      const BrandLists = useLoaderData();
@@ -56,6 +57,7 @@ const AddProduct = () => {
      };
      return (
           <div className="bg-gradient-to-r from-blue-700 to-blue-400 min-h-screen">
+               <WebsiteTitle title={"TechBD || Add Product"}></WebsiteTitle>
                <div className="container mx-auto">
                     <h3 className="text-white text-center pt-5 text-2xl md:text-3xl font-bold">
                          Add Product

@@ -3,6 +3,7 @@ import { Link, useLoaderData, useParams } from "react-router-dom";
 import ShowBrandCards from "./ShowBrandCards";
 import Marquee from "react-fast-marquee";
 import Footer from "../Footer/Footer";
+import WebsiteTitle from "../WebsiteTitle/WebsiteTitle";
 
 const BrandDetails = () => {
      const [brandData, setBrandData] = useState([]);
@@ -19,6 +20,8 @@ const BrandDetails = () => {
      }, [brandName, products]);
      return (
           <div className="container mx-auto">
+               <WebsiteTitle title={"TechBD || Products"}></WebsiteTitle>
+
                {brandData.length === 0 ? (
                     <div className="text-center mx-auto text-xl md:text-3xl font-bold mt-20 space-y-2">
                          <h1>Oops...!</h1>

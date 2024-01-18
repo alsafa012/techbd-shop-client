@@ -3,6 +3,7 @@ import { FiEye, FiEyeOff } from "react-icons/fi";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../Provider/AuthProvider";
 import Swal from "sweetalert2";
+import WebsiteTitle from "../../Components/WebsiteTitle/WebsiteTitle";
 
 const Login = () => {
      const [showPassword, setShowPassword] = useState(false);
@@ -94,6 +95,7 @@ const Login = () => {
      return (
           <div>
                <div>
+                    <WebsiteTitle title={"TechBD || Login"}></WebsiteTitle>
                     <p className="text-3xl font-bold mb-6 text-center text-blue-500 mt-5">
                          Login Page
                     </p>

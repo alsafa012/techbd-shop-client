@@ -4,6 +4,7 @@ import { CiLocationOn } from "react-icons/ci";
 import { PiPhoneDuotone } from "react-icons/pi";
 import { AiOutlineFieldTime } from "react-icons/ai";
 import Aos from "aos";
+import WebsiteTitle from "../../Components/WebsiteTitle/WebsiteTitle";
 
 const ContactUs = () => {
      useEffect(() => {
@@ -11,6 +12,8 @@ const ContactUs = () => {
      }, []);
      return (
           <div>
+               <WebsiteTitle title={"TechBD || Contact Us"}></WebsiteTitle>
+
                <div>
                     <h1
                          data-aos="fade-down"

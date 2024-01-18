@@ -1,10 +1,13 @@
 import React from "react";
 import Footer from "../../Components/Footer/Footer";
+import WebsiteTitle from "../../Components/WebsiteTitle/WebsiteTitle";
 
 const AboutUs = () => {
      return (
           <div>
                <div className="">
+                    <WebsiteTitle title={"TechBD || About Us"}></WebsiteTitle>
+
                     <h1 className="w-[300px] mx-auto mb-5 text-center text-2xl border-b-4 border-blue-600 md:text-4xl lg:text-5xl font-bold text-blue-600 mt-8 md:mt-16">
                          About Us
                     </h1>
